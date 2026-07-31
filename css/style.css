@@ -2287,19 +2287,19 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding: 30px 35px;
+  padding: 40px 45px;
   border-top: 1px solid #d4a958;
 }
 
 .pre-footer-item {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 22px;
 }
 
 .pre-footer-icon {
-  width: 75px;
-  height: 75px;
+  width: 85px;
+  height: 85px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
@@ -2309,6 +2309,8 @@ img {
 .pre-footer-icon img {
   width: 100%;
   height: 100%;
+  max-width: 85px;
+  max-height: 85px;
   object-fit: contain;
   filter: brightness(0) saturate(100%) invert(67%) sepia(54%) saturate(464%) hue-rotate(6deg) brightness(92%) contrast(87%);
 }
@@ -2316,28 +2318,28 @@ img {
 .pre-footer-info {
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: 4px;
 }
 
 .pre-footer-info h5 {
   font-family: var(--font-serif);
-  font-size: clamp(0.82rem, 0.92vw, 0.95rem);
+  font-size: clamp(1rem, 1.15vw, 1.25rem);
   font-weight: 600;
   color: #d4a958;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 1.2px;
   margin: 0;
   line-height: 1.2;
 }
 
 .pre-footer-info p {
   font-family: var(--font-sans);
-  font-size: clamp(0.72rem, 0.8vw, 0.82rem);
+  font-size: clamp(0.85rem, 0.95vw, 1rem);
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.88);
   margin: 0;
-  letter-spacing: 0.4px;
-  line-height: 1.4;
+  letter-spacing: 0.5px;
+  line-height: 1.45;
 }
 
 .pre-footer-info p.white-text {
@@ -2347,12 +2349,12 @@ img {
 
 .pre-footer-info .phone-link {
   font-family: var(--font-sans);
-  font-size: clamp(0.95rem, 1.05vw, 1.1rem);
+  font-size: clamp(1.15rem, 1.3vw, 1.35rem);
   font-weight: 700;
   color: #FFFFFF;
   text-decoration: none;
-  margin-top: 3px;
-  letter-spacing: 0.6px;
+  margin-top: 4px;
+  letter-spacing: 0.8px;
   transition: color 0.3s ease;
 }
 
@@ -2362,7 +2364,7 @@ img {
 
 .pre-footer-divider {
   width: 1.5px;
-  height: 75px;
+  height: 95px;
   background-color: #d4a958;
   flex-shrink: 0;
 }
