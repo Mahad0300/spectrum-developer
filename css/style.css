@@ -1243,11 +1243,11 @@ img {
   letter-spacing: 2px;
 }
 
-/* Swiper Carousel Container (100% Full Width Edge to Edge) */
+/* Swiper Carousel Container (Bounded to max-width container) */
 .carousel-wrapper {
-  width: 100%;
-  max-width: 100%;
-  margin: 0;
+  max-width: 1650px;
+  width: 92%;
+  margin: 0 auto;
   padding: 0;
   overflow: hidden;
   position: relative;
@@ -1256,7 +1256,7 @@ img {
 .experiences-swiper {
   width: 100%;
   padding: 30px 0 60px !important;
-  overflow: visible !important;
+  overflow: hidden !important;
 }
 
 .experiences-swiper .swiper-wrapper {

@@ -228,7 +228,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (typeof Swiper !== 'undefined' && document.querySelector('.experiences-swiper')) {
     const experiencesSwiper = new Swiper('.experiences-swiper', {
       loop: true,
-      centeredSlides: true,
+      centeredSlides: false,
       slidesPerView: 'auto',
       spaceBetween: 32,
       speed: 700,
