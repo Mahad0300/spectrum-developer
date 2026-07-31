@@ -1248,29 +1248,15 @@ img {
   width: 100%;
   max-width: 100%;
   margin: 0;
-  padding: 0;
+  padding: 0 0 0 5vw;
   overflow: hidden;
   position: relative;
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 14%, #000 100%);
-  mask-image: linear-gradient(to right, transparent 0%, #000 14%, #000 100%);
-}
-
-.carousel-wrapper::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 16vw;
-  height: 100%;
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0) 100%);
-  z-index: 10;
-  pointer-events: none;
 }
 
 .experiences-swiper {
   width: 100%;
   padding: 30px 0 60px !important;
-  overflow: visible !important;
+  overflow: hidden !important;
 }
 
 .experiences-swiper .swiper-wrapper {
