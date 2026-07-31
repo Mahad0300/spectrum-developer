@@ -1243,7 +1243,7 @@ img {
   letter-spacing: 2px;
 }
 
-/* Swiper Carousel Container (Bounded to max-width container) */
+/* Swiper Carousel Container (Contained Luxury Width) */
 .carousel-wrapper {
   max-width: 1650px;
   width: 92%;
@@ -1251,6 +1251,7 @@ img {
   padding: 0;
   overflow: hidden;
   position: relative;
+  box-sizing: border-box;
 }
 
 .experiences-swiper {
