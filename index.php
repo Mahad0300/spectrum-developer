@@ -684,8 +684,7 @@ are at the heart of this transformation.</p>
                 </div>
                 <div class="pre-footer-info">
                     <h5>PREFER TO TALK?</h5>
-                    <p>SPEAK DIRECTLY WITH OUR TEAM.</p>
-                    <a href="tel:+923111123115" class="phone-link">+92 311 1123115</a>
+                    <p>SPEAK DIRECTLY WITH OUR TEAM.<br><a href="tel:+923111123115" class="phone-link">+92 311 1123115</a></p>
                 </div>
             </div>
 
@@ -697,7 +696,7 @@ are at the heart of this transformation.</p>
                     <img src="assets/images/visitoutexperiencecenter.png" alt="Experience Centre">
                 </div>
                 <div class="pre-footer-info">
-                    <h5>VISIT OUR EXPERIENCE CENTRE</h5>
+                    <h5>VISIT OUR<br>EXPERIENCE CENTRE</h5>
                     <p>BY APPOINTMENT ONLY.<br>BOOK YOUR PRIVATE TOUR.</p>
                 </div>
             </div>
@@ -711,7 +710,7 @@ are at the heart of this transformation.</p>
                 </div>
                 <div class="pre-footer-info">
                     <h5>MEET. DISCUSS. DISCOVER</h5>
-                    <p>PERSONALIZED GUIDANCE FOR INFORMED DECISIONS.</p>
+                    <p>PERSONALIZED GUIDANCE<br>FOR INFORMED DECISIONS.</p>
                 </div>
             </div>
 
@@ -724,7 +723,7 @@ are at the heart of this transformation.</p>
                 </div>
                 <div class="pre-footer-info">
                     <h5>DEDICATED</h5>
-                    <p class="white-text">RELATIONSHIP MANAGER</p>
+                    <p class="white-text">RELATIONSHIP<br>MANAGER</p>
                 </div>
             </div>
 
