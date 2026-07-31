@@ -13,6 +13,39 @@
     </div>
 </section>
 
+<!-- Section 3: Be Part Of Something Extraordinary Register CTA Section -->
+<section class="resort-register-section">
+    <!-- Background Image Layer (something.jpg) & Dark Overlay -->
+    <div class="resort-register-bg"></div>
+    <div class="resort-register-overlay"></div>
+
+    <div class="resort-register-container">
+        <!-- Left Content -->
+        <div class="resort-register-content">
+            <h2 class="resort-register-title">
+                BE PART OF SOMETHING<br>EXTRAORDINARY
+            </h2>
+            <p class="resort-register-desc">
+                Register your interest today and be the first to know about updates, offers and launches.
+            </p>
+        </div>
+
+        <!-- Right Horizontal Form -->
+        <form class="resort-register-form" action="#" method="POST">
+            <div class="resort-form-group">
+                <input type="text" name="name" class="resort-form-input" placeholder="Your Name" required>
+            </div>
+            <div class="resort-form-group">
+                <input type="email" name="email" class="resort-form-input" placeholder="Your Email" required>
+            </div>
+            <div class="resort-form-group">
+                <input type="tel" name="phone" class="resort-form-input" placeholder="Your Phone" required>
+            </div>
+            <button type="submit" class="resort-form-btn">REGISTER NOW</button>
+        </form>
+    </div>
+</section>
+
 <?php 
   include 'includes/footer.php'; 
 ?>

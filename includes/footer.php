@@ -13,12 +13,12 @@
 
             <!-- Column 2: Legacy -->
             <div class="footer-col">
-                <h4 class="footer-col-title">LEGACY</h4>
+                <h4 class="footer-col-title"><a href="legacy.php" style="color: inherit;">LEGACY</a></h4>
                 <ul class="footer-links">
-                    <li><a href="#about">Chairman's Message</a></li>
-                    <li><a href="#about">Leadership</a></li>
-                    <li><a href="#about">Our Philosophy</a></li>
-                    <li><a href="#about">Corporate Credibility</a></li>
+                    <li><a href="legacy.php">Chairman's Message</a></li>
+                    <li><a href="legacy.php">Leadership</a></li>
+                    <li><a href="legacy.php">Our Philosophy</a></li>
+                    <li><a href="legacy.php">Corporate Credibility</a></li>
                 </ul>
             </div>
 
@@ -26,11 +26,11 @@
 
             <!-- Column 3: Destinations -->
             <div class="footer-col">
-                <h4 class="footer-col-title">DESTINATIONS</h4>
+                <h4 class="footer-col-title"><a href="index.php#destinations" style="color: inherit;">DESTINATIONS</a></h4>
                 <ul class="footer-links">
-                    <li><a href="#destinations">Highway City Resort Living</a></li>
-                    <li><a href="#destinations">Highway City Executive Enclave</a></li>
-                    <li><a href="#destinations">Agro City</a></li>
+                    <li><a href="highway-city.php">Highway City</a></li>
+                    <li><a href="highway-city-resort-living.php">HIGHWAY CITY EXECUTIVE ENCLAVE</a></li>
+                    <li><a href="farm-lands.php">HIGHWAY CITY FARMLANDS (Coming Soon)</a></li>
                 </ul>
             </div>
 
@@ -38,13 +38,13 @@
 
             <!-- Column 4: Experience -->
             <div class="footer-col">
-                <h4 class="footer-col-title">EXPERIENCE</h4>
+                <h4 class="footer-col-title"><a href="experiences.php" style="color: inherit;">EXPERIENCE</a></h4>
                 <ul class="footer-links">
-                    <li><a href="#features">Sunrise Mornings</a></li>
-                    <li><a href="#features">Wellness & Recreation</a></li>
-                    <li><a href="#features">Family Moments</a></li>
-                    <li><a href="#features">Nature & Adventure</a></li>
-                    <li><a href="#features">Waterfront Escapes</a></li>
+                    <li><a href="experiences.php">Sunrise Mornings</a></li>
+                    <li><a href="experiences.php">Wellness & Recreation</a></li>
+                    <li><a href="experiences.php">Family Moments</a></li>
+                    <li><a href="experiences.php">Nature & Adventure</a></li>
+                    <li><a href="experiences.php">Waterfront Escapes</a></li>
                 </ul>
             </div>
 

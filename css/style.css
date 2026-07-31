@@ -2353,7 +2353,6 @@ img {
 .pre-footer-info .phone-link {
   font-family: var(--font-sans);
   font-size: clamp(0.85rem, 0.95vw, 1rem);
-  font-weight: 700;
   color: #FFFFFF;
   text-decoration: none;
   margin-top: 2px;
@@ -4729,7 +4728,7 @@ img {
 .resort-register-section {
   position: relative;
   width: 100%;
-  padding: 100px 0;
+  padding: 45px 0;
   background-color: #07080A;
   overflow: hidden;
   box-sizing: border-box;
@@ -8237,7 +8236,7 @@ img {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(180deg, rgb(0 0 0 / 84%) 0%, rgba(0, 0, 0, 0.5) 30%, rgb(0 0 0 / 0%) 60%, rgb(0 0 0 / 0%) 100%);
+  background: linear-gradient(180deg, rgb(0 0 0 / 56%) 0%, rgb(0 0 0 / 67%) 30%, rgb(0 0 0 / 0%) 60%, rgb(0 0 0 / 0%) 100%);
   z-index: 2;
   pointer-events: none;
 }
@@ -8268,33 +8267,32 @@ img {
   color: #FFFFFF;
   letter-spacing: 4px;
   text-transform: uppercase;
-  margin: 0 0 0.15rem 0;
   line-height: 1.1;
   text-shadow: 0 4px 25px rgba(0, 0, 0, 0.5);
 }
 
 .hc-sub-title {
   font-family: var(--font-serif);
-  font-size: clamp(1.15rem, 2.2vw, 2.5rem);
-  font-weight: 500;
-  color: var(--color-gold-primary);
-  letter-spacing: 6px;
-  text-transform: uppercase;
-  margin: 0 0 1.2rem 0;
+    font-size: clamp(1.15rem, 2.2vw, 2rem);
+    font-weight: 500;
+    color: #d4a958;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    margin: 0 0 0.2rem 0;
 }
 
 .hc-badge-box {
   display: inline-block;
-  border: 2px solid var(--color-gold-primary);
-  border-radius: 8px;
-  padding: 0.65rem 2.2rem;
-  font-family: var(--font-serif);
-  font-size: clamp(0.8125rem, 1.4vw, 1.5rem);
-  font-weight: 600;
-  color: var(--color-gold-primary);
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-bottom: 1.1rem;
+    border: 2px solid #d4a958;
+    border-radius: 8px;
+    padding: 0.45rem 2.2rem;
+    font-family: var(--font-serif);
+    font-size: clamp(0.8125rem, 1.4vw, 1.2rem);
+    font-weight: 600;
+    color: #d4a958;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 1.1rem;
 }
 
 .hc-desc-text {
