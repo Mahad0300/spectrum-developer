@@ -191,7 +191,7 @@
         <div class="masterplan-right">
             <div class="luxury-card" id="masterplanCard">
                 <div class="card-image-box">
-                    <img id="mpCardImage" src="assets/images/executive.png" alt="Executive Square District">
+                    <img id="mpCardImage" src="assets/images/tabs-executive.png" alt="Executive Square District">
                 </div>
 
                 <div class="card-body">

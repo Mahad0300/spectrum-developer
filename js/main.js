@@ -126,42 +126,42 @@ document.addEventListener('DOMContentLoaded', () => {
       title: 'EXECUTIVE SQUARE',
       subtitle: 'CRAFTED FOR LEADERS. BUILT FOR SUCCESS',
       desc: 'A district designed for professionals, entrepreneurs, and those who aspire to lead.',
-      image: 'assets/images/executive.png',
+      image: 'assets/images/tabs-executive.png',
       link: 'highway-city.php#executive-square'
     },
     'santorini-shores': {
       title: 'SANTORINI SHORES',
       subtitle: 'MEDITERRANEAN CHARM. WATERFRONT LUXURY',
       desc: 'Inspired by iconic Greek coastal architecture with picturesque water views and serene walkways.',
-      image: 'assets/images/santorini.png',
+      image: 'assets/images/tabs-santorini.png',
       link: 'highway-city.php#santorini-shores'
     },
     'rainforest-enclave': {
       title: 'RAINFOREST ENCLAVE',
       subtitle: 'NATURE IMMERSION. BIOPHILIC LIVING',
       desc: 'Surrounded by lush flora and canopy trails designed for deep relaxation and ecological harmony.',
-      image: 'assets/images/rainforest.png',
+      image: 'assets/images/tabs-rainforest.png',
       link: 'highway-city.php#rainforest-enclave'
     },
     'downtown': {
       title: 'DOWNTOWN',
       subtitle: 'THE PULSE OF EVERYDAY LIFE',
       desc: 'A vibrant hub where business, culture, and community come together seamlessly.',
-      image: 'assets/images/downtown.png',
+      image: 'assets/images/tabs-downtown.png',
       link: 'highway-city.php#downtown'
     },
     'parkland-estates': {
       title: 'PARKLAND ESTATES',
       subtitle: 'EXPANSIVE GREENS. SERENE ELEGANCE',
       desc: 'Generous estate plots nestled amidst rolling green landscapes and private parks.',
-      image: 'assets/images/parkland.png',
+      image: 'assets/images/tabs-parkland.png',
       link: 'highway-city.php#parkland-estates'
     },
     'serene-heaven': {
       title: 'SERENE HEAVEN',
       subtitle: 'TRANQUIL SANCTUARY. PRIVACY DEFINED',
       desc: 'A secluded haven crafted for ultimate privacy, peaceful living, and timeless comfort.',
-      image: 'assets/images/serene.png',
+      image: 'assets/images/tabs-serene.png',
       link: 'highway-city.php#serene-heaven'
     }
   };
