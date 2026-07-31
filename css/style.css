@@ -888,7 +888,7 @@ img {
   margin-bottom: 2rem;
 }
 
-/* Destination Menu Navigation (Max 4 Visible, Rest Scrollable) */
+/* Destination Menu Navigation (Max 4 Visible, Rest Scrollable, Hidden Scrollbar) */
 .destination-menu {
   display: flex;
   flex-direction: column;
@@ -897,24 +897,16 @@ img {
   max-width: 435px;
   max-height: 215px;
   overflow-y: auto;
-  padding-right: 8px;
+  padding-right: 0;
   box-sizing: border-box;
-  scrollbar-width: thin;
-  scrollbar-color: #C8A15A rgba(255, 255, 255, 0.05);
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 .destination-menu::-webkit-scrollbar {
-  width: 4px;
-}
-
-.destination-menu::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 4px;
-}
-
-.destination-menu::-webkit-scrollbar-thumb {
-  background: #C8A15A;
-  border-radius: 4px;
+  display: none;
+  width: 0;
+  height: 0;
 }
 
 .menu-item {
