@@ -213,7 +213,7 @@ img {
 }
 
 .nav-item:hover .dropdown-icon,
-.nav-item.dropdown-active .dropdown-icon {.dropdown-link
+.nav-item.dropdown-active .dropdown-icon {
   transform: rotate(180deg);
   color: var(--color-gold-primary);
 }
