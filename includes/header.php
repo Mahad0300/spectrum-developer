@@ -48,13 +48,13 @@
                         </a>
                         <ul class="dropdown-menu" aria-label="Destinations Submenu">
                             <li class="dropdown-item">
-                                <a href="highway-city-resort-living.php" class="dropdown-link <?php echo ($currentPage == 'highway-city-resort-living.php') ? 'active' : ''; ?>">Highway City Resort Living</a>
-                            </li>
-                            <li class="dropdown-item">
                                 <a href="highway-city.php" class="dropdown-link <?php echo ($currentPage == 'highway-city.php') ? 'active' : ''; ?>">Highway City</a>
                             </li>
                             <li class="dropdown-item">
-                                <a href="farm-lands.php" class="dropdown-link <?php echo ($currentPage == 'farm-lands.php') ? 'active' : ''; ?>">Farm Lands (Coming Soon)</a>
+                                <a href="highway-city-resort-living.php" class="dropdown-link <?php echo ($currentPage == 'highway-city-resort-living.php') ? 'active' : ''; ?>">HIGHWAY CITY EXECUTIVE ENCLAVE</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a href="farm-lands.php" class="dropdown-link <?php echo ($currentPage == 'farm-lands.php') ? 'active' : ''; ?>">HIGHWAY CITY FARMLANDS (Coming Soon)</a>
                             </li>
                         </ul>
                     </li>
@@ -112,9 +112,9 @@
                     <i class="fa-solid fa-chevron-down accordion-arrow"></i>
                 </button>
                 <ul class="mobile-accordion-menu" id="mobileDestinationsMenu">
-                    <li><a href="highway-city-resort-living.php" class="mobile-sub-link <?php echo ($currentPage == 'highway-city-resort-living.php') ? 'active' : ''; ?>">Highway City Resort Living</a></li>
                     <li><a href="highway-city.php" class="mobile-sub-link <?php echo ($currentPage == 'highway-city.php') ? 'active' : ''; ?>">Highway City</a></li>
-                    <li><a href="farm-lands.php" class="mobile-sub-link <?php echo ($currentPage == 'farm-lands.php') ? 'active' : ''; ?>">Farm Lands (Coming Soon)</a></li>
+                    <li><a href="highway-city-resort-living.php" class="mobile-sub-link <?php echo ($currentPage == 'highway-city-resort-living.php') ? 'active' : ''; ?>">HIGHWAY CITY EXECUTIVE ENCLAVE</a></li>
+                    <li><a href="farm-lands.php" class="mobile-sub-link <?php echo ($currentPage == 'farm-lands.php') ? 'active' : ''; ?>">HIGHWAY CITY FARMLANDS (Coming Soon)</a></li>
                 </ul>
             </li>
 
