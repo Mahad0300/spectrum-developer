@@ -225,7 +225,7 @@
                     </div>
 
                     <!-- Card Button -->
-                    <a id="mpCardBtn" href="highway-city.php#executive-square" class="card-btn-gold">
+                    <a id="mpCardBtn" href="highway-city.php" class="card-btn-gold">
                         <span>EXPLORE DISTRICT</span>
                         <i class="fa-solid fa-arrow-right arrow-icon"></i>
                     </a>
