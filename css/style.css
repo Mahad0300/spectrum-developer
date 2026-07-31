@@ -2287,19 +2287,19 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding: 35px 40px;
+  padding: 30px 35px;
   border-top: 1px solid #d4a958;
 }
 
 .pre-footer-item {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 18px;
 }
 
 .pre-footer-icon {
-  width: 65px;
-  height: 65px;
+  width: 75px;
+  height: 75px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
@@ -2316,28 +2316,28 @@ img {
 .pre-footer-info {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 3px;
 }
 
 .pre-footer-info h5 {
   font-family: var(--font-serif);
-  font-size: clamp(0.95rem, 1.1vw, 1.15rem);
+  font-size: clamp(0.82rem, 0.92vw, 0.95rem);
   font-weight: 600;
   color: #d4a958;
   text-transform: uppercase;
-  letter-spacing: 1.2px;
+  letter-spacing: 1px;
   margin: 0;
   line-height: 1.2;
 }
 
 .pre-footer-info p {
   font-family: var(--font-sans);
-  font-size: clamp(0.82rem, 0.92vw, 0.95rem);
+  font-size: clamp(0.72rem, 0.8vw, 0.82rem);
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.88);
+  color: rgba(255, 255, 255, 0.85);
   margin: 0;
-  letter-spacing: 0.5px;
-  line-height: 1.45;
+  letter-spacing: 0.4px;
+  line-height: 1.4;
 }
 
 .pre-footer-info p.white-text {
@@ -2347,12 +2347,12 @@ img {
 
 .pre-footer-info .phone-link {
   font-family: var(--font-sans);
-  font-size: clamp(1.1rem, 1.25vw, 1.3rem);
+  font-size: clamp(0.95rem, 1.05vw, 1.1rem);
   font-weight: 700;
   color: #FFFFFF;
   text-decoration: none;
-  margin-top: 4px;
-  letter-spacing: 0.8px;
+  margin-top: 3px;
+  letter-spacing: 0.6px;
   transition: color 0.3s ease;
 }
 
@@ -2362,7 +2362,7 @@ img {
 
 .pre-footer-divider {
   width: 1.5px;
-  height: 80px;
+  height: 75px;
   background-color: #d4a958;
   flex-shrink: 0;
 }
