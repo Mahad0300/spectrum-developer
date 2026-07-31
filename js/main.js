@@ -232,7 +232,7 @@ document.addEventListener('DOMContentLoaded', () => {
       centeredSlides: false,
       slidesPerView: 'auto',
       spaceBetween: 32,
-      speed: 800,
+      speed: 900,
       grabCursor: true,
       autoplay: {
         delay: 3500,
