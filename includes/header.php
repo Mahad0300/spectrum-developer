@@ -30,7 +30,7 @@
         <div class="nav-container">
             <!-- Brand Logo -->
             <a href="index.php" class="brand-logo" aria-label="Spectrum Developers Home">
-                <img src="assets/images/logo.png" alt="Spectrum Developers Logo">
+                <img src="<?php echo ($currentPage == 'client-portal.php') ? 'assets/images/logo-1.svg' : 'assets/images/logo.png'; ?>" alt="Spectrum Developers Logo">
             </a>
 
             <!-- Desktop Navigation Links -->
@@ -92,7 +92,7 @@
         <!-- Drawer Header with Logo & Close Icon -->
         <div class="drawer-header">
             <a href="index.php" class="drawer-logo" aria-label="Spectrum Developers Home">
-                <img src="assets/images/logo.png" alt="Spectrum Developers Logo">
+                <img src="<?php echo ($currentPage == 'client-portal.php') ? 'assets/images/logo-1.svg' : 'assets/images/logo.png'; ?>" alt="Spectrum Developers Logo">
             </a>
             <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close Navigation Menu">
                 <i class="fa-solid fa-xmark"></i>
