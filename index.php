@@ -141,30 +141,35 @@
 
             <!-- Destination Menu -->
             <ul class="destination-menu">
-                <li class="menu-item active">
-                    <a href="#executive-square" class="menu-link">
+                <li class="menu-item active" data-district="executive-square">
+                    <a href="javascript:void(0);" class="menu-link">
                         <span>EXECUTIVE SQUARE</span>
                         <i class="fa-solid fa-arrow-right menu-arrow"></i>
                     </a>
                 </li>
-                <li class="menu-item">
-                    <a href="#santorini-shores" class="menu-link">
+                <li class="menu-item" data-district="santorini-shores">
+                    <a href="javascript:void(0);" class="menu-link">
                         <span>SANTORINI SHORES</span>
                     </a>
                 </li>
-                <li class="menu-item">
-                    <a href="#rainforest-enclave" class="menu-link">
+                <li class="menu-item" data-district="rainforest-enclave">
+                    <a href="javascript:void(0);" class="menu-link">
                         <span>RAINFOREST ENCLAVE</span>
                     </a>
                 </li>
-                <li class="menu-item">
-                    <a href="#downtown" class="menu-link">
+                <li class="menu-item" data-district="downtown">
+                    <a href="javascript:void(0);" class="menu-link">
                         <span>DOWNTOWN</span>
                     </a>
                 </li>
-                <li class="menu-item">
-                    <a href="#parkland-estates" class="menu-link">
+                <li class="menu-item" data-district="parkland-estates">
+                    <a href="javascript:void(0);" class="menu-link">
                         <span>PARKLAND ESTATES</span>
+                    </a>
+                </li>
+                <li class="menu-item" data-district="serene-heaven">
+                    <a href="javascript:void(0);" class="menu-link">
+                        <span>SERENE HEAVEN</span>
                     </a>
                 </li>
             </ul>
@@ -184,20 +189,20 @@
 
         <!-- Right Floating Luxury Card -->
         <div class="masterplan-right">
-            <div class="luxury-card">
+            <div class="luxury-card" id="masterplanCard">
                 <div class="card-image-box">
-                    <img src="assets/images/slider-1.jpg" alt="Executive Square District">
+                    <img id="mpCardImage" src="assets/images/executive.png" alt="Executive Square District">
                 </div>
 
                 <div class="card-body">
-                    <h3 class="card-title">EXECUTIVE SQUARE</h3>
-                    <h4 class="card-subtitle">CRAFTED FOR LEADERS. BUILT FOR SUCCESS</h4>
-                    <p class="card-desc">
+                    <h3 id="mpCardTitle" class="card-title">EXECUTIVE SQUARE</h3>
+                    <h4 id="mpCardSubtitle" class="card-subtitle">CRAFTED FOR LEADERS. BUILT FOR SUCCESS</h4>
+                    <p id="mpCardDesc" class="card-desc">
                         A district designed for professionals, entrepreneurs, and those who aspire to lead.
                     </p>
 
                     <!-- Feature Icons Row -->
-                    <div class="card-features">
+                    <div id="mpCardFeatures" class="card-features">
                         <div class="feature-item">
                             <img src="assets/images/premium.png" alt="Premium Residences">
                             <span>PREMIUM<br>RESIDENCES</span>
@@ -220,7 +225,7 @@
                     </div>
 
                     <!-- Card Button -->
-                    <a href="#explore-district" class="card-btn-gold">
+                    <a id="mpCardBtn" href="highway-city.php#executive-square" class="card-btn-gold">
                         <span>EXPLORE DISTRICT</span>
                         <i class="fa-solid fa-arrow-right arrow-icon"></i>
                     </a>

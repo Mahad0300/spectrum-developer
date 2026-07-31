@@ -120,11 +120,104 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 4. Masterplan Experience Destination Menu Active Toggle
+  // 4. Masterplan Experience Destination Menu Interactive Card Content Switching
+  const masterplanData = {
+    'executive-square': {
+      title: 'EXECUTIVE SQUARE',
+      subtitle: 'CRAFTED FOR LEADERS. BUILT FOR SUCCESS',
+      desc: 'A district designed for professionals, entrepreneurs, and those who aspire to lead.',
+      image: 'assets/images/executive.png',
+      link: 'highway-city.php#executive-square',
+      features: [
+        { icon: 'assets/images/premium.png', text: 'PREMIUM<br>RESIDENCES' },
+        { icon: 'assets/images/business.png', text: 'BUSINESS<br>DISTRICT' },
+        { icon: 'assets/images/luxury.png', text: 'LUXURY<br>AMENITIES' },
+        { icon: 'assets/images/central.png', text: 'CENTRAL<br>PARKS' }
+      ]
+    },
+    'santorini-shores': {
+      title: 'SANTORINI SHORES',
+      subtitle: 'MEDITERRANEAN CHARM. WATERFRONT LUXURY',
+      desc: 'Inspired by iconic Greek coastal architecture with picturesque water views and serene walkways.',
+      image: 'assets/images/santorini.png',
+      link: 'highway-city.php#santorini-shores',
+      features: [
+        { icon: 'assets/images/tropical-living.png', text: 'WATERFRONT<br>VILLAS' },
+        { icon: 'assets/images/subtainable.png', text: 'COASTAL<br>PROMENADE' },
+        { icon: 'assets/images/swimming-pools.png', text: 'RESORT<br>POOLS' },
+        { icon: 'assets/images/secure.png', text: 'PRIVATE<br>CLUB' }
+      ]
+    },
+    'rainforest-enclave': {
+      title: 'RAINFOREST ENCLAVE',
+      subtitle: 'NATURE IMMERSION. BIOPHILIC LIVING',
+      desc: 'Surrounded by lush flora and canopy trails designed for deep relaxation and ecological harmony.',
+      image: 'assets/images/rainforest.png',
+      link: 'highway-city.php#rainforest-enclave',
+      features: [
+        { icon: 'assets/images/tropical-living.png', text: 'CANOPY<br>TRAILS' },
+        { icon: 'assets/images/subtainable.png', text: 'ECO<br>VILLAS' },
+        { icon: 'assets/images/park.png', text: 'ZEN<br>GARDENS' },
+        { icon: 'assets/images/secure.png', text: 'NATURE<br>RESERVES' }
+      ]
+    },
+    'downtown': {
+      title: 'DOWNTOWN',
+      subtitle: 'THE PULSE OF EVERYDAY LIFE',
+      desc: 'A vibrant hub where business, culture, and community come together seamlessly.',
+      image: 'assets/images/downtown.png',
+      link: 'highway-city.php#downtown',
+      features: [
+        { icon: 'assets/images/business.png', text: 'COMMERCIAL<br>BOULEVARD' },
+        { icon: 'assets/images/park.png', text: 'COMMUNITY<br>PARK' },
+        { icon: 'assets/images/premium.png', text: 'AL QADIR<br>MOSQUE' },
+        { icon: 'assets/images/amentities.png', text: 'DINING<br>DISTRICT' }
+      ]
+    },
+    'parkland-estates': {
+      title: 'PARKLAND ESTATES',
+      subtitle: 'EXPANSIVE GREENS. SERENE ELEGANCE',
+      desc: 'Generous estate plots nestled amidst rolling green landscapes and private parks.',
+      image: 'assets/images/parkland.png',
+      link: 'highway-city.php#parkland-estates',
+      features: [
+        { icon: 'assets/images/premium.png', text: 'ESTATE<br>PLOTS' },
+        { icon: 'assets/images/park.png', text: 'GRAND<br>PARKS' },
+        { icon: 'assets/images/sports.png', text: 'JOGGING<br>TRACKS' },
+        { icon: 'assets/images/secure.png', text: 'FAMILY<br>LAWNS' }
+      ]
+    },
+    'serene-heaven': {
+      title: 'SERENE HEAVEN',
+      subtitle: 'TRANQUIL SANCTUARY. PRIVACY DEFINED',
+      desc: 'A secluded haven crafted for ultimate privacy, peaceful living, and timeless comfort.',
+      image: 'assets/images/serene.png',
+      link: 'highway-city.php#serene-heaven',
+      features: [
+        { icon: 'assets/images/tropical-living.png', text: 'PRIVATE<br>SANCTUARY' },
+        { icon: 'assets/images/premium.png', text: 'LUXURY<br>VILLAS' },
+        { icon: 'assets/images/subtainable.png', text: 'SERENE<br>LAKES' },
+        { icon: 'assets/images/secure.png', text: 'GATED<br>SECURITY' }
+      ]
+    }
+  };
+
   const menuItems = document.querySelectorAll('.destination-menu .menu-item');
+  const card = document.getElementById('masterplanCard');
+  const cardImg = document.getElementById('mpCardImage');
+  const cardTitle = document.getElementById('mpCardTitle');
+  const cardSubtitle = document.getElementById('mpCardSubtitle');
+  const cardDesc = document.getElementById('mpCardDesc');
+  const cardFeatures = document.getElementById('mpCardFeatures');
+  const cardBtn = document.getElementById('mpCardBtn');
+
   menuItems.forEach((item) => {
     item.addEventListener('click', (e) => {
       e.preventDefault();
+      const districtKey = item.getAttribute('data-district');
+      const data = masterplanData[districtKey];
+
+      // Update active state in menu
       menuItems.forEach((i) => {
         i.classList.remove('active');
         const arrow = i.querySelector('.menu-arrow');
@@ -137,6 +230,37 @@ document.addEventListener('DOMContentLoaded', () => {
         const arrow = document.createElement('i');
         arrow.className = 'fa-solid fa-arrow-right menu-arrow';
         link.appendChild(arrow);
+      }
+
+      // Smooth card content transition if data exists
+      if (card && data) {
+        card.style.opacity = '0.3';
+        card.style.transform = 'translateY(6px)';
+        card.style.transition = 'all 0.25s ease';
+
+        setTimeout(() => {
+          if (cardImg) {
+            cardImg.src = data.image;
+            cardImg.alt = data.title;
+          }
+          if (cardTitle) cardTitle.textContent = data.title;
+          if (cardSubtitle) cardSubtitle.textContent = data.subtitle;
+          if (cardDesc) cardDesc.textContent = data.desc;
+          if (cardBtn) cardBtn.href = data.link;
+
+          if (cardFeatures && data.features) {
+            cardFeatures.innerHTML = data.features.map((f, idx) => `
+              <div class="feature-item">
+                <img src="${f.icon}" alt="${data.title} Feature">
+                <span>${f.text}</span>
+              </div>
+              ${idx < data.features.length - 1 ? '<div class="feature-divider"></div>' : ''}
+            `).join('');
+          }
+
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        }, 220);
       }
     });
   });

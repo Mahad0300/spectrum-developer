@@ -888,13 +888,33 @@ img {
   margin-bottom: 2rem;
 }
 
-/* Destination Menu Navigation */
+/* Destination Menu Navigation (Max 4 Visible, Rest Scrollable) */
 .destination-menu {
   display: flex;
   flex-direction: column;
-  margin-bottom: 6.20rem;
+  margin-bottom: 3.5rem;
   width: 100%;
-  max-width: 425px;
+  max-width: 435px;
+  max-height: 215px;
+  overflow-y: auto;
+  padding-right: 8px;
+  box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: #C8A15A rgba(255, 255, 255, 0.05);
+}
+
+.destination-menu::-webkit-scrollbar {
+  width: 4px;
+}
+
+.destination-menu::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+}
+
+.destination-menu::-webkit-scrollbar-thumb {
+  background: #C8A15A;
+  border-radius: 4px;
 }
 
 .menu-item {
