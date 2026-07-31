@@ -9,8 +9,7 @@
         <!-- Header Titles -->
         <div class="portal-header-wrapper auth-header-wrapper">
             <h1 class="portal-main-title">
-                CREATE YOUR<br>
-                <span class="highlight-gold">ACCOUNT</span>
+                CREATE YOUR <span class="highlight-gold">ACCOUNT</span>
             </h1>
             <p class="portal-subtitle">
                 REGISTER YOUR ACCOUNT TO TRACK APPLICATION PROGRESS, BALLOTING STATUS, AND EXCLUSIVE PROPERTY UPDATES.

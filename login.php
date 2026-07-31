@@ -9,8 +9,7 @@
         <!-- Header Titles -->
         <div class="portal-header-wrapper auth-header-wrapper">
             <h1 class="portal-main-title">
-                CLIENT<br>
-                <span class="highlight-gold">LOGIN</span>
+                CLIENT <span class="highlight-gold">LOGIN</span>
             </h1>
             <p class="portal-subtitle">
                 ACCESS YOUR APPLICANT DASHBOARD, BALLOT RESULTS, AND PROPERTY INVESTMENT RECORDS WITH SECURE ENCRYPTION.
@@ -67,17 +66,14 @@
                         </div>
                     </div>
 
-                    <!-- Remember Me & Actions Row -->
+                    <!-- Remember Me & Submit Button Row -->
                     <div class="auth-options-row">
                         <label class="custom-checkbox">
                             <input type="checkbox" id="rememberMe">
                             <span class="checkmark"></span>
                             <span class="checkbox-text">Remember me on this device</span>
                         </label>
-                    </div>
 
-                    <!-- Submit Button -->
-                    <div class="form-submit-group full-width">
                         <button type="submit" class="btn-verify-now btn-auth-submit" id="btnLoginSubmit">
                             <span>SIGN IN</span>
                             <i class="fa-solid fa-arrow-right"></i>
