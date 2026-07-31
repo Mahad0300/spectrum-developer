@@ -134,44 +134,6 @@
             </div>
         </div>
 
-        <!-- Important Note & Support Card -->
-        <div class="portal-card support-card">
-            <div class="support-card-content">
-                <div class="note-block">
-                    <div class="note-icon">
-                        <svg width="34" height="40" viewBox="0 0 28 34" fill="none" xmlns="http://www.w3.org/2000/svg" class="note-icon-svg">
-                            <path d="M14 2L2 6.8V15.6C2 23.3 7.1 30.5 14 32C20.9 30.5 26 23.3 26 15.6V6.8L14 2Z" stroke="#C5A059" stroke-width="2.2" stroke-linejoin="round"/>
-                            <path d="M9.5 16L12.5 19L18.5 13" stroke="#C5A059" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                    <div class="note-text-wrapper">
-                        <h4 class="note-title">VERIFIED IDENTITY POLICY</h4>
-                        <p class="note-description">
-                            Please ensure your CNIC and Name match official government records for smooth balloting verification.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="help-block">
-                    <div class="help-info-group">
-                        <div class="help-icon">
-                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="help-icon-svg">
-                                <path d="M3 14V12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12V14" stroke="#C5A059" stroke-width="1.8" stroke-linecap="round"/>
-                                <rect x="2" y="13" width="3" height="6" rx="1.5" stroke="#C5A059" stroke-width="1.8"/>
-                                <rect x="19" y="13" width="3" height="6" rx="1.5" stroke="#C5A059" stroke-width="1.8"/>
-                                <path d="M20 19V20C20 21.1046 19.1046 22 18 22H15" stroke="#C5A059" stroke-width="1.8" stroke-linecap="round"/>
-                            </svg>
-                        </div>
-                        <div class="help-text-wrapper">
-                            <h4 class="help-title">NEED HELP?</h4>
-                            <p class="help-description">Our support team is here to assist you.</p>
-                        </div>
-                    </div>
-                    <a href="contact.php" class="btn-contact-support">
-                        CONTACT SUPPORT <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
         </div>
 
     </div>
