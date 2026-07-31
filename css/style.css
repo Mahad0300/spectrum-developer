@@ -66,11 +66,9 @@
   padding: 0;
 }
 
-html,
-body {
+html {
   scroll-behavior: smooth;
   font-size: 16px;
-  overflow-x: hidden;
   width: 100%;
 }
 
@@ -1248,7 +1246,7 @@ img {
   width: 100%;
   max-width: 100%;
   margin: 0;
-  padding: 0 0 0 5vw;
+  padding: 0 0 0 10vw;
   overflow: hidden;
   position: relative;
 }
@@ -7512,7 +7510,6 @@ img {
   background-color: #F6F4EE;
   padding: 140px 0 90px 0;
   color: #1E293B;
-  overflow-x: hidden;
 }
 
 .portal-container {

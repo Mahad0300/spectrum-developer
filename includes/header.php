@@ -68,9 +68,9 @@
                     <li class="nav-item">
                         <a href="contact.php" class="nav-link <?php echo ($currentPage == 'contact.php') ? 'active' : ''; ?>">CONTACT</a>
                     </li>
-                    <!-- <li class="nav-item nav-item-portal">
+                    <li class="nav-item nav-item-portal">
                         <a href="client-portal.php" class="btn-header-portal <?php echo ($currentPage == 'client-portal.php') ? 'active' : ''; ?>">CLIENT PORTAL</a>
-                    </li> -->
+                    </li>
                 </ul>
             </nav>
 
