@@ -1019,7 +1019,13 @@ img {
   border: 2px solid #C8A15A;
   border-radius: 30px;
   overflow: hidden;
+  transition: opacity 0.22s ease-in-out, transform 0.22s ease-in-out;
+  will-change: opacity, transform;
+}
 
+.luxury-card.card-fading {
+  opacity: 0;
+  transform: translateY(8px);
 }
 
 .card-image-box {

@@ -204,12 +204,11 @@ document.addEventListener('DOMContentLoaded', () => {
         link.appendChild(arrow);
       }
 
-      // 2. Instant & Snappy GPU-Accelerated Card Update
+      // 2. Smooth 180ms cross-fade card transition
       if (card) {
-        card.style.opacity = '0.7';
-        card.style.transition = 'opacity 0.08s ease-out';
+        card.classList.add('card-fading');
 
-        requestAnimationFrame(() => {
+        setTimeout(() => {
           if (cardImg) {
             cardImg.src = data.image;
             cardImg.alt = data.title;
@@ -219,10 +218,8 @@ document.addEventListener('DOMContentLoaded', () => {
           if (cardDesc) cardDesc.textContent = data.desc;
           if (cardBtn) cardBtn.href = data.link;
 
-          requestAnimationFrame(() => {
-            card.style.opacity = '1';
-          });
-        });
+          card.classList.remove('card-fading');
+        }, 180);
       }
     });
   });
