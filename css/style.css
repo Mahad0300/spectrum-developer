@@ -2287,19 +2287,19 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding: 24px 30px;
+  padding: 35px 40px;
   border-top: 1px solid #d4a958;
 }
 
 .pre-footer-item {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 20px;
 }
 
 .pre-footer-icon {
-  width: 40px;
-  height: 40px;
+  width: 65px;
+  height: 65px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
@@ -2316,43 +2316,43 @@ img {
 .pre-footer-info {
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: 4px;
 }
 
 .pre-footer-info h5 {
   font-family: var(--font-serif);
-  font-size: 0.85rem;
-  font-weight: 500;
+  font-size: clamp(0.95rem, 1.1vw, 1.15rem);
+  font-weight: 600;
   color: #d4a958;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 1.2px;
   margin: 0;
   line-height: 1.2;
 }
 
 .pre-footer-info p {
   font-family: var(--font-sans);
-  font-size: 0.75rem;
-  font-weight: 300;
-  color: rgba(255, 255, 255, 0.8);
+  font-size: clamp(0.82rem, 0.92vw, 0.95rem);
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.88);
   margin: 0;
   letter-spacing: 0.5px;
-  line-height: 1.4;
+  line-height: 1.45;
 }
 
 .pre-footer-info p.white-text {
   color: #FFFFFF;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .pre-footer-info .phone-link {
   font-family: var(--font-sans);
-  font-size: 0.95rem;
-  font-weight: 600;
+  font-size: clamp(1.1rem, 1.25vw, 1.3rem);
+  font-weight: 700;
   color: #FFFFFF;
   text-decoration: none;
-  margin-top: 2px;
-  letter-spacing: 0.5px;
+  margin-top: 4px;
+  letter-spacing: 0.8px;
   transition: color 0.3s ease;
 }
 
@@ -2361,8 +2361,8 @@ img {
 }
 
 .pre-footer-divider {
-  width: 1px;
-  height: 60px;
+  width: 1.5px;
+  height: 80px;
   background-color: #d4a958;
   flex-shrink: 0;
 }
