@@ -1243,29 +1243,27 @@ img {
   letter-spacing: 2px;
 }
 
-/* Swiper Carousel Container (Left-Aligned to Container, Full-Right to Screen Edge) */
+/* Swiper Carousel Container (Constrained 1650px Container, Clean Left/Right Clipping) */
 .carousel-wrapper {
-  width: 100%;
-  max-width: 100%;
-  padding-left: max(4vw, calc((100vw - 1650px) / 2));
-  padding-right: 0;
-  margin: 0;
+  width: 92%;
+  max-width: 1650px;
+  margin: 0 auto;
+  padding: 0;
   overflow: hidden;
   position: relative;
-  box-sizing: border-box;
 }
 
 .experiences-swiper {
   width: 100%;
   padding: 20px 0 50px !important;
-  overflow: visible !important;
+  overflow: hidden !important;
 }
 
 .experiences-swiper .swiper-wrapper {
-  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1) !important;
+  transition-timing-function: cubic-bezier(0.25, 1, 0.5, 1) !important;
 }
 
-/* Card Design (380px x 500px) */
+/* Card Design (No Scaling, Pure Clean Slide) */
 .swiper-slide.experience-card {
   width: 450px !important;
   height: 520px !important;
@@ -1273,13 +1271,8 @@ img {
   flex-direction: column;
   border-radius: 0;
   overflow: hidden;
-  transition: transform 0.4s ease, filter 0.4s ease;
   user-select: none;
   box-sizing: border-box;
-}
-
-.swiper-slide-active.experience-card {
-  transform: scale(1.04);
 }
 
 .card-img-holder {
