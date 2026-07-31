@@ -256,4 +256,23 @@ document.addEventListener('DOMContentLoaded', () => {
       },
     });
   }
+
+  // 6. Header Auth Hamburger Dropdown Toggle (Login / Signup)
+  const authBtn = document.getElementById('authHamburgerBtn');
+  const authDropdown = document.getElementById('authDropdownMenu');
+
+  if (authBtn && authDropdown) {
+    authBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      authDropdown.classList.toggle('show');
+      authBtn.classList.toggle('active');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!authDropdown.contains(e.target) && !authBtn.contains(e.target)) {
+        authDropdown.classList.remove('show');
+        authBtn.classList.remove('active');
+      }
+    });
+  }
 });

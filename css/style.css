@@ -138,7 +138,6 @@ img {
 .brand-logo img {
   height: 100px;
   width: auto;
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
   transition: var(--transition-fast);
 }
 
@@ -7499,6 +7498,100 @@ img {
   color: #FFFFFF;
 }
 
+/* Header Auth Hamburger Dropdown Button (Matching CLIENT PORTAL Style) */
+.header-auth-dropdown-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.btn-header-hamburger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 0.85rem;
+  font-size: 1.1rem;
+  color: #FFFFFF;
+  border: 1.5px solid rgba(255, 255, 255, 0.85);
+  border-radius: 2px;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  line-height: 1.2;
+}
+
+.btn-header-hamburger:hover,
+.btn-header-hamburger.active {
+  background-color: var(--color-gold-primary);
+  border-color: var(--color-gold-primary);
+  color: #FFFFFF;
+  box-shadow: 0 4px 15px rgba(197, 160, 89, 0.35);
+}
+
+.site-header.header-light .btn-header-hamburger {
+  color: #1E293B;
+  border-color: #1E293B;
+}
+
+.site-header.header-light .btn-header-hamburger:hover,
+.site-header.header-light .btn-header-hamburger.active {
+  background-color: var(--color-gold-primary);
+  border-color: var(--color-gold-primary);
+  color: #FFFFFF;
+}
+
+/* Auth Dropdown Menu (Login / Signup) */
+.auth-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  min-width: 170px;
+  background-color: #FFFFFF;
+  border-top: 3px solid var(--color-gold-primary);
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  padding: 0.5rem 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1200;
+}
+
+.auth-dropdown-menu.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.auth-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.7rem 1.25rem;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1E293B;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+}
+
+.auth-dropdown-item i {
+  color: var(--color-gold-primary);
+  font-size: 0.9rem;
+  transition: transform 0.2s ease;
+}
+
+.auth-dropdown-item:hover {
+  background-color: #F8FAFC;
+  color: var(--color-gold-dark);
+}
+
+.auth-dropdown-item:hover i {
+  transform: translateX(3px);
+}
+
 
 /* ==========================================================================
    CLIENT PORTAL / BALLOTING VERIFICATION PAGE STYLES
@@ -7508,7 +7601,7 @@ img {
   width: 100%;
   min-height: 100vh;
   background-color: #F6F4EE;
-  padding: 140px 0 90px 0;
+  padding: 180px 0 90px 0;
   color: #1E293B;
 }
 
@@ -8116,7 +8209,7 @@ img {
 
 @media (max-width: 768px) {
   .portal-main-section {
-    padding-top: 110px;
+    padding-top: 150px;
     padding-bottom: 60px;
   }
 

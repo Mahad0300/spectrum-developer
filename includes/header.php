@@ -71,6 +71,23 @@
                     <li class="nav-item nav-item-portal">
                         <a href="client-portal.php" class="btn-header-portal <?php echo ($currentPage == 'client-portal.php') ? 'active' : ''; ?>">CLIENT PORTAL</a>
                     </li>
+                    <li class="nav-item nav-item-auth-menu">
+                        <div class="header-auth-dropdown-wrapper" id="authDropdownWrapper">
+                            <button type="button" class="btn-header-hamburger" id="authHamburgerBtn" aria-label="Account Menu">
+                                <i class="fa-solid fa-bars"></i>
+                            </button>
+                            <div class="auth-dropdown-menu" id="authDropdownMenu">
+                                <a href="login.php" class="auth-dropdown-item">
+                                    <i class="fa-solid fa-right-to-bracket"></i>
+                                    <span>LOGIN</span>
+                                </a>
+                                <a href="signup.php" class="auth-dropdown-item">
+                                    <i class="fa-solid fa-user-plus"></i>
+                                    <span>SIGNUP</span>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
                 </ul>
             </nav>
 
