@@ -228,13 +228,14 @@ document.addEventListener('DOMContentLoaded', () => {
   if (typeof Swiper !== 'undefined' && document.querySelector('.experiences-swiper')) {
     const experiencesSwiper = new Swiper('.experiences-swiper', {
       loop: true,
+      loopAdditionalSlides: 4,
       centeredSlides: false,
       slidesPerView: 'auto',
       spaceBetween: 32,
-      speed: 700,
+      speed: 800,
       grabCursor: true,
       autoplay: {
-        delay: 5000,
+        delay: 3500,
         disableOnInteraction: false,
         pauseOnMouseEnter: true,
       },
