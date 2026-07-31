@@ -1243,20 +1243,22 @@ img {
   letter-spacing: 2px;
 }
 
-/* Swiper Carousel Container (Constrained 1650px Container, Clean Left/Right Clipping) */
+/* Swiper Carousel Container (Left-Aligned to Container, Full-Right to Screen Edge) */
 .carousel-wrapper {
-  width: 92%;
-  max-width: 1650px;
-  margin: 0 auto;
-  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  padding-left: max(4vw, calc((100vw - 1650px) / 2));
+  padding-right: 0;
+  margin: 0;
   overflow: hidden;
   position: relative;
+  box-sizing: border-box;
 }
 
 .experiences-swiper {
   width: 100%;
   padding: 20px 0 50px !important;
-  overflow: hidden !important;
+  overflow: visible !important;
 }
 
 .experiences-swiper .swiper-wrapper {
