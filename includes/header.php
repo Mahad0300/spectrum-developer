@@ -147,5 +147,11 @@
             <li class="mobile-nav-item">
                 <a href="client-portal.php" class="mobile-nav-link <?php echo ($currentPage == 'client-portal.php') ? 'active' : ''; ?>">CLIENT PORTAL</a>
             </li>
+            <li class="mobile-nav-item">
+                <a href="login.php" class="mobile-nav-link <?php echo ($currentPage == 'login.php') ? 'active' : ''; ?>">LOGIN</a>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="signup.php" class="mobile-nav-link <?php echo ($currentPage == 'signup.php') ? 'active' : ''; ?>">SIGNUP</a>
+            </li>
         </ul>
     </div>

@@ -857,14 +857,39 @@ img {
 
 @media (max-width: 640px) {
   .pillars-grid {
-    grid-template-columns: 1fr;
-    gap: 3.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.2rem 0.75rem;
+  }
+
+  .pillars-grid .pillar-col {
+    padding: 0 0.35rem;
+  }
+
+  .pillar-icon-box {
+    width: 85px;
+    height: 85px;
+    margin-bottom: 12px;
+  }
+
+  .pillar-item-title {
+    font-size: 0.92rem;
+    letter-spacing: 1.2px;
+    margin-bottom: 8px;
+    text-align: center;
+  }
+
+  .pillar-item-desc {
+    font-size: 0.8rem;
+    line-height: 1.45;
+    max-width: 100%;
+    text-align: center;
   }
 
   .pillars-grid .pillar-col:last-of-type {
-    grid-column: auto;
+    grid-column: span 2;
     justify-self: center;
-    max-width: 300px;
+    max-width: 320px;
+    margin: 0 auto;
   }
 }
 
@@ -1161,7 +1186,7 @@ img {
   align-items: center;
   justify-content: center;
   gap: 0.85rem;
-  width: 45%;
+  width: 52%;
   height: 30px;
   border: 1px solid #C8A15A;
   background: transparent;
@@ -1806,8 +1831,36 @@ img {
     height: 230px;
   }
 
+  .infra-feature-panel {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.8rem 0.5rem;
+    padding: 24px 12px;
+    border-radius: 24px;
+  }
+
   .infra-feature-item {
     flex: 0 0 100%;
+    max-width: 100%;
+    padding: 0 0.25rem;
+  }
+
+  .feature-icon-box {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 8px;
+  }
+
+  .infra-feature-item h4 {
+    font-size: 0.85rem;
+    letter-spacing: 0.6px;
+    margin-bottom: 4px;
+  }
+
+  .infra-feature-item p {
+    font-size: 0.72rem;
+    line-height: 1.4;
+    max-width: 100%;
   }
 }
 
@@ -2065,18 +2118,40 @@ img {
 
 @media (max-width: 640px) {
   .invest-feature-grid {
-    grid-template-columns: 1fr;
-    gap: 35px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.2rem 0.75rem;
   }
 
   .invest-feature-card {
     width: 100%;
+    padding: 0 0.25rem;
+  }
+
+  .invest-icon-box {
+    height: 44px;
+    margin-bottom: 10px;
+  }
+
+  .invest-icon-box img {
+    max-height: 40px;
+  }
+
+  .invest-feature-card h4 {
+    font-size: 0.85rem;
+    letter-spacing: 0.6px;
+    margin-bottom: 4px;
+  }
+
+  .invest-feature-card p {
+    font-size: 0.72rem;
+    line-height: 1.4;
   }
 
   .invest-feature-grid .invest-feature-card:last-of-type {
-    grid-column: auto;
+    grid-column: span 2;
     justify-self: center;
-    max-width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
   }
 }
 
@@ -3829,7 +3904,16 @@ img {
   }
 
   .philosophy-timeline-col {
-    padding: 0 12px !important;
+    padding: 0 10px !important;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .philosophy-milestone-desc {
+    max-width: 100%;
+    margin: 0 auto;
   }
 
   .philosophy-timeline-col::after {
@@ -3844,18 +3928,29 @@ img {
 
 @media (max-width: 480px) {
   .philosophy-timeline-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px 0;
   }
 
   .philosophy-timeline-col {
-    border-right: none !important;
-    border-bottom: 1px solid rgba(199, 163, 90, 0.25);
-    padding-bottom: 25px !important;
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
   }
 
-  .philosophy-timeline-col:last-child {
-    border-bottom: none;
+  .philosophy-year {
+    font-size: clamp(1.8rem, 6vw, 2.4rem);
+    margin-bottom: 10px;
+  }
+
+  .philosophy-milestone-title {
+    font-size: clamp(0.72rem, 3.2vw, 0.88rem);
+    letter-spacing: 0.8px;
+    margin-bottom: 8px;
+  }
+
+  .philosophy-milestone-desc {
+    font-size: clamp(0.68rem, 3vw, 0.78rem);
+    line-height: 1.45;
   }
 
   .philosophy-footer-gold {
@@ -4154,20 +4249,54 @@ img {
   }
 
   .accreditations-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px 0;
   }
 
   .accreditation-card {
-    border-bottom: 1px solid rgba(199, 163, 90, 0.35) !important;
-    padding: 35px 15px;
+    border-bottom: 1px solid rgba(199, 163, 90, 0.25) !important;
+    padding: 20px 10px;
   }
 
-  .accreditation-card:last-child {
+  .accreditation-card:nth-child(7),
+  .accreditation-card:nth-child(8) {
     border-bottom: none !important;
   }
 
   .accreditation-card::after {
     display: none !important;
+  }
+
+  .accreditation-card:nth-child(2n+1)::after {
+    display: block !important;
+    content: '';
+    position: absolute;
+    top: 15%;
+    right: 0;
+    width: 1px;
+    height: 70%;
+    background: rgba(199, 163, 90, 0.45);
+  }
+
+  .accreditation-icon-box {
+    height: 45px;
+    margin-bottom: 12px;
+  }
+
+  .accreditation-icon {
+    max-height: 42px;
+  }
+
+  .accreditation-title {
+    font-size: clamp(0.78rem, 3.2vw, 0.9rem);
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+  }
+
+  .accreditation-desc {
+    font-size: clamp(0.66rem, 2.8vw, 0.76rem);
+    line-height: 1.4;
+    max-width: 100%;
   }
 
   .accreditations-bottom-box {
@@ -8901,18 +9030,17 @@ img {
 
 
 /* Highway City Responsive Breakpoints */
-@media (max-width: 1200px) {
+@media (max-width: 1024px) {
   .hc-highlights-grid {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: stretch;
-    justify-content: center;
-    gap: 1.5rem 1.25rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem 1rem;
   }
 
   .hc-highlight-item {
-    flex: 1 1 240px;
-    max-width: 340px;
+    flex: none;
+    width: 100%;
+    max-width: 100%;
     border-right: none;
     border-bottom: 1px solid rgba(197, 160, 89, 0.15);
     padding-bottom: 1rem;
@@ -8923,10 +9051,12 @@ img {
     display: none;
   }
 
+  /* Center the 5th item (STRONG INVESTMENT) in 2-column grid */
   .hc-highlights-grid .hc-highlight-item:last-child {
-    grid-column: auto;
-    max-width: 340px;
-    margin: 0;
+    grid-column: span 2;
+    justify-self: center;
+    max-width: 420px;
+    margin: 0 auto;
   }
 }
 
@@ -8934,17 +9064,22 @@ img {
   .hc-hero-section {
     padding-top: 110px;
   }
-
-  .hc-highlight-item {
-    flex: 1 1 220px;
-    max-width: 320px;
-  }
 }
 
 @media (max-width: 540px) {
-  .hc-highlight-item {
-    flex: 1 1 100%;
+  .hc-highlights-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .hc-highlights-grid .hc-highlight-item:last-child {
+    grid-column: auto;
+    justify-self: stretch;
     max-width: 100%;
+    margin: 0;
+  }
+
+  .hc-highlight-item {
     padding: 0 0 1rem 0;
   }
 
