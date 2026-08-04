@@ -131,36 +131,36 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     'santorini-shores': {
       title: 'SANTORINI SHORES',
-      subtitle: 'MEDITERRANEAN CHARM. WATERFRONT LUXURY',
-      desc: 'Inspired by iconic Greek coastal architecture with picturesque water views and serene walkways.',
+      subtitle: 'Where the Journey Finds Its Peace',
+      desc: 'A waterfront destination inspired by resort living, leisure, and unforgettable experiences.',
       image: 'assets/images/tabs-santorini.png',
       link: 'highway-city.php'
     },
     'rainforest-enclave': {
       title: 'RAINFOREST ENCLAVE',
-      subtitle: 'NATURE IMMERSION. BIOPHILIC LIVING',
-      desc: 'Surrounded by lush flora and canopy trails designed for deep relaxation and ecological harmony.',
+      subtitle: 'A Sanctuary Shaped by Nature',
+      desc: 'A tranquil environment where lush landscapes and natural beauty create a refreshing sense of escape.',
       image: 'assets/images/tabs-rainforest.png',
       link: 'highway-city.php'
     },
     'downtown': {
       title: 'DOWNTOWN',
-      subtitle: 'THE PULSE OF EVERYDAY LIFE',
-      desc: 'A vibrant hub where business, culture, and community come together seamlessly.',
+      subtitle: 'The Pulse of Everyday Life',
+      desc: 'The urban heart of the enclave, bringing together commerce, dining, business, and community activity.',
       image: 'assets/images/tabs-downtown.png',
       link: 'highway-city.php'
     },
     'parkland-estates': {
       title: 'PARKLAND ESTATES',
-      subtitle: 'EXPANSIVE GREENS. SERENE ELEGANCE',
-      desc: 'Generous estate plots nestled amidst rolling green landscapes and private parks.',
+      subtitle: 'Where Innovation Meets Nature',
+      desc: 'Lakefront living overlooking a vibrant park, future IT hub, and one of the most distinctive landscapes within the community.',
       image: 'assets/images/tabs-parkland.png',
       link: 'highway-city.php'
     },
     'serene-heaven': {
       title: 'SERENE HEAVEN',
-      subtitle: 'TRANQUIL SANCTUARY. PRIVACY DEFINED',
-      desc: 'A secluded haven crafted for ultimate privacy, peaceful living, and timeless comfort.',
+      subtitle: 'Where the Journey Finds Its Peace',
+      desc: 'A scenic retreat of open skies and peaceful surroundings, enhanced by the captivating glow of the windmill skyline after sunset.',
       image: 'assets/images/tabs-serene.png',
       link: 'highway-city.php'
     }
