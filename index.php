@@ -180,7 +180,7 @@
                     <i class="fa-solid fa-play play-icon"></i>
                     <span>WATCH MASTERPLAN FILM</span>
                 </a>
-                <a href="#brochure" class="btn-outline-pill">
+                <a href="Highway%20City%20Executive%20Enclave%20Broucher.pdf" class="btn-outline-pill" download="Highway City Executive Enclave Broucher.pdf">
                     <i class="fa-solid fa-download download-icon"></i>
                     <span>DOWNLOAD BROCHURE</span>
                 </a>
@@ -289,6 +289,16 @@
                         </div>
                         <div class="card-caption">
                             <h3>FIRE BRIGADE STATION</h3>
+                        </div>
+                    </div>
+
+                    <!-- Slide 5: Parkland Estates -->
+                    <div class="swiper-slide experience-card">
+                        <div class="card-img-holder">
+                            <img src="assets/images/tabs-parkland.png" alt="Parkland Estates">
+                        </div>
+                        <div class="card-caption">
+                            <h3>PARKLAND ESTATES</h3>
                         </div>
                     </div>
 
@@ -679,7 +689,7 @@ are at the heart of this transformation.</p>
 </section>
 
 <!-- Pre-Footer Top Bar -->
-    <div class="pre-footer-bar">
+<div class="pre-footer-bar">
         <div class="pre-footer-left">
             
             <!-- Item 1 -->
@@ -737,7 +747,9 @@ are at the heart of this transformation.</p>
         <div class="pre-footer-right">
             <img src="assets/images/cta.png" alt="Spectrum Developers Entrance">
         </div>
-    </div>
+</div>
+
+
 <?php 
   include 'includes/footer.php'; 
 ?>

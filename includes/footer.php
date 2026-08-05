@@ -92,7 +92,7 @@
         </div>
 
         <!-- Priority Support Floating Card -->
-        <div class="priority-support-card">
+        <a href="https://wa.me/923111123115" class="priority-support-card" target="_blank" rel="noopener noreferrer" aria-label="Priority Support on WhatsApp">
             <div class="support-icon">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#d4a958" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
@@ -103,16 +103,18 @@
                 <h4>PRIORITY SUPPORT</h4>
                 <p>let our team curate the right opportunities for you.</p>
             </div>
-        </div>
+        </a>
 
         <!-- Bottom Copyright Bar -->
         <div class="footer-bottom-bar">
             <p class="copyright-text">&copy; SPECTRUM DEVELOPERS. ALL RIGHTS RESERVED.</p>
             <div class="footer-social-links">
-                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://www.facebook.com/share/185K93ufDD/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/spectrumdevelopers" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://pk.linkedin.com/company/spectrum-developers-official" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://www.youtube.com/@SpectrumDevelopersOfficial" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://www.tiktok.com/@spectrum.develope" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="https://wa.me/923111123115" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
             </div>
         </div>
     </footer>

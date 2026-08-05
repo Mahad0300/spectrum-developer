@@ -51,15 +51,7 @@
 
                     <div class="form-or-divider">OR</div>
 
-                    <!-- Field 2: Application No -->
-                    <div class="form-group">
-                        <label for="inputAppNo">APPLICATION NO.</label>
-                        <input type="text" id="inputAppNo" class="form-input" placeholder="e.g., HC-1234" autocomplete="off">
-                    </div>
-
-                    <div class="form-or-divider">OR</div>
-
-                    <!-- Field 3: Ballot No -->
+                    <!-- Field 2: Ballot No -->
                     <div class="form-group">
                         <label for="inputBallotNo">BALLOT NO.</label>
                         <input type="text" id="inputBallotNo" class="form-input" placeholder="e.g., B-001234" autocomplete="off">
@@ -209,7 +201,7 @@
                             <p class="help-description">Our support team is here to assist you.</p>
                         </div>
                     </div>
-                    <a href="contact.php" class="btn-contact-support">
+                    <a href="https://wa.me/923111123115" class="btn-contact-support" target="_blank" rel="noopener noreferrer">
                         CONTACT SUPPORT <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
@@ -224,7 +216,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const searchForm = document.getElementById('ballotSearchForm');
     const inputCNIC = document.getElementById('inputCNIC');
-    const inputAppNo = document.getElementById('inputAppNo');
     const inputBallotNo = document.getElementById('inputBallotNo');
     const btnVerifyNow = document.getElementById('btnVerifyNow');
     const resultCard = document.getElementById('resultCard');
@@ -255,22 +246,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function handleSearch() {
         const cnicVal = inputCNIC.value.trim().toLowerCase();
-        const appNoVal = inputAppNo.value.trim().toLowerCase();
         const ballotVal = inputBallotNo.value.trim().toLowerCase();
 
         let matched = null;
-        if (cnicVal || appNoVal || ballotVal) {
+        if (cnicVal || ballotVal) {
             matched = mockDatabase.find(item => 
                 (cnicVal && item.cnic.toLowerCase().includes(cnicVal)) ||
-                (appNoVal && item.appNo.toLowerCase().includes(appNoVal)) ||
                 (ballotVal && item.ballotNo.toLowerCase().includes(ballotVal))
             );
         }
 
-        if (!matched && (cnicVal || appNoVal || ballotVal)) {
+        if (!matched && (cnicVal || ballotVal)) {
             matched = {
                 cnic: cnicVal ? inputCNIC.value.trim() : "12345-1234567-1",
-                appNo: appNoVal ? inputAppNo.value.trim().toUpperCase() : "HC-1234",
+                appNo: "HC-1234",
                 ballotNo: ballotVal ? inputBallotNo.value.trim().toUpperCase() : "B-001234",
                 name: "VERIFIED APPLICANT",
                 status: "SUCCESSFUL",

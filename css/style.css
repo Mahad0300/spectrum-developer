@@ -1433,8 +1433,12 @@ img {
 }
 
 @media (max-width: 640px) {
+  .carousel-wrapper {
+    padding: 0 20px;
+  }
+
   .swiper-slide.experience-card {
-    width: 290px !important;
+    width: 100% !important;
     height: 420px !important;
   }
 }
@@ -2471,6 +2475,7 @@ img {
   width: 100%;
   display: flex;
   background-color: #050505;
+  border-top: 1px solid #d4a958;
   border-bottom: 1px solid rgba(199, 163, 90, 0.2);
   box-sizing: border-box;
 }
@@ -2481,7 +2486,6 @@ img {
   align-items: center;
   justify-content: space-around;
   padding: 35px 40px;
-  border-top: 1px solid #d4a958;
 }
 
 .pre-footer-item {
@@ -2756,6 +2760,9 @@ img {
   align-items: center;
   gap: 20px;
   box-sizing: border-box;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
 }
 
 .support-icon {
