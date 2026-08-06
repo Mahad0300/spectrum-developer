@@ -12,7 +12,7 @@
             <div class="footer-col-divider"></div>
 
             <!-- Column 2: Legacy -->
-            <div class="footer-col">
+            <div class="footer-col footer-nav-col">
                 <h4 class="footer-col-title"><a href="legacy.php" style="color: inherit;">LEGACY</a></h4>
                 <ul class="footer-links">
                     <li><a href="legacy.php">Chairman's Message</a></li>
@@ -22,10 +22,10 @@
                 </ul>
             </div>
 
-            <div class="footer-col-divider"></div>
+            <div class="footer-col-divider footer-nav-divider"></div>
 
             <!-- Column 3: Destinations -->
-            <div class="footer-col">
+            <div class="footer-col footer-nav-col">
                 <h4 class="footer-col-title"><a href="index.php#destinations" style="color: inherit;">DESTINATIONS</a></h4>
                 <ul class="footer-links">
                     <li><a href="highway-city.php">Highway City</a></li>
@@ -34,10 +34,10 @@
                 </ul>
             </div>
 
-            <div class="footer-col-divider"></div>
+            <div class="footer-col-divider footer-nav-divider"></div>
 
             <!-- Column 4: Experience -->
-            <div class="footer-col">
+            <div class="footer-col footer-nav-col">
                 <h4 class="footer-col-title"><a href="experiences.php" style="color: inherit;">EXPERIENCE</a></h4>
                 <ul class="footer-links">
                     <li><a href="experiences.php">Sunrise Mornings</a></li>
