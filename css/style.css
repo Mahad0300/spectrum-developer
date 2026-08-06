@@ -3321,7 +3321,6 @@ img {
     max-height: none !important;
     max-width: none !important;
     object-fit: cover;
-    /* Image has curved cutout on right — bias left so face sits center in oval */
     object-position: 32% 12%;
     margin: 0 !important;
     display: block;
@@ -4266,6 +4265,129 @@ img {
   }
 }
 
+/* 320px–700px: image on top WITHOUT overlay, text/timeline below */
+@media (max-width: 700px) {
+  .philosophy-section {
+    padding: 0 0 50px;
+    display: flex;
+    flex-direction: column;
+    background-color: #0A0C0E;
+    overflow: hidden;
+  }
+
+  /*
+    our.webp framing (design match):
+    - kam asmaan, gate center, road/flowers neeche
+    - background-position neeche = sky crop
+  */
+  .philosophy-bg-layer {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: 100% !important;
+    height: clamp(270px, 92vw, 400px) !important;
+    background-image: url('../assets/images/our.webp') !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    /* 70% = sky kam, gate + road zyada (pehle 35% se asmaan zyada aa raha tha) */
+    background-position: center 60% !important;
+    -webkit-mask-image: none !important;
+    mask-image: none !important;
+    opacity: 1 !important;
+    filter: none !important;
+    z-index: 1;
+    order: 1;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+
+  /* Soft bottom fade — OUR heading isi pe baithegi */
+  .philosophy-bg-layer::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 50%;
+    background: linear-gradient(
+      to bottom,
+      rgba(10, 12, 14, 0) 0%,
+      rgba(10, 12, 14, 0.25) 30%,
+      rgba(10, 12, 14, 0.8) 70%,
+      #0A0C0E 100%
+    );
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  /* Kill full-section CSS overlay on mobile */
+  .philosophy-overlay {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    background: none !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+
+  /* OUR image pe, PHILOSOPHY neeche black pe */
+  .philosophy-container {
+    position: relative;
+    z-index: 3;
+    order: 2;
+    width: 100%;
+    max-width: 100%;
+    margin: -88px 0 0;
+    padding: 0 5% 0;
+    box-sizing: border-box;
+    background-color: transparent;
+  }
+
+  .philosophy-header {
+    max-width: 100%;
+    text-align: left;
+    margin-bottom: 28px;
+  }
+
+  .philosophy-main-title {
+    font-size: clamp(2.4rem, 11vw, 3.2rem);
+    letter-spacing: 2px;
+    line-height: 1.05;
+    margin-bottom: 1rem;
+    text-align: left;
+  }
+
+  .philosophy-main-title .title-gold {
+    position: relative;
+    display: inline-block;
+    padding-right: 16px;
+  }
+  
+
+  .philosophy-subtitle {
+    font-size: clamp(0.85rem, 3.5vw, 1.05rem);
+    letter-spacing: 1.5px;
+    text-align: left;
+  }
+
+  .philosophy-intro {
+    font-size: clamp(0.88rem, 3.6vw, 1rem);
+    line-height: 1.65;
+    text-align: left;
+  }
+
+  .philosophy-timeline-grid {
+    padding-top: 10px;
+    margin-bottom: 36px;
+  }
+
+  .philosophy-footer-statement {
+    text-align: center;
+  }
+}
+
 /* ==========================================================================
    CORPORATE CREDIBILITY SECTION
    ========================================================================== */
@@ -4357,19 +4479,85 @@ img {
 }
 
 /* ==========================================================================
-   RESPONSIVE BREAKPOINTS (320px to 991px)
+   RESPONSIVE: image on top, text below (separate blocks)
    ========================================================================== */
 @media (max-width: 991px) {
   .credibility-section {
-    padding: 80px 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #131313;
+  }
+
+  /* Image block — sits on its own above the text */
+  .credibility-bg-layer {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    height: clamp(220px, 48vw, 340px);
+    background-size: cover;
+    background-position: center center;
+    z-index: 1;
+    order: 1;
   }
 
   .credibility-overlay {
-    background: linear-gradient(180deg, rgb(7 8 10 / 65%) 0%, rgb(7 8 10 / 74%) 60%, rgba(7, 8, 10, 0.96) 100%);
+    display: none;
+  }
+
+  /* Text block — below the image, centered on mobile */
+  .credibility-container {
+    position: relative;
+    z-index: 2;
+    order: 2;
+    width: 100%;
+    max-width: 100%;
+    padding: 36px 6% 48px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
   }
 
   .credibility-content-box {
     max-width: 100%;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .credibility-subtitle {
+    font-size: clamp(0.85rem, 3.4vw, 1.05rem);
+    letter-spacing: 2px;
+    margin-bottom: 0.75rem;
+    text-align: center;
+  }
+
+  .credibility-main-title {
+    font-size: clamp(2.1rem, 9vw, 3rem);
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .credibility-desc {
+    font-size: clamp(0.9rem, 3.6vw, 1.05rem);
+    line-height: 1.65;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .credibility-bg-layer {
+    height: 210px;
+  }
+
+  .credibility-container {
+    padding: 28px 5% 0px;
   }
 }
 
@@ -4551,9 +4739,16 @@ img {
   }
 }
 
+@media (max-width: 991px) {
+  .accreditations-section {
+    border-top: none;
+  }
+}
+
 @media (max-width: 640px) {
   .accreditations-section {
     padding: 60px 0 70px;
+    border-top: none;
   }
 
   .accreditations-grid {
