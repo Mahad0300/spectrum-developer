@@ -3013,72 +3013,220 @@ img {
   width: 100%;
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   background-image: linear-gradient(180deg,
       rgba(0, 0, 0, 0.45) 0%,
-      rgba(0, 0, 0, 0.25) 50%,
-      rgba(0, 0, 0, 0.6) 100%),
+      rgba(0, 0, 0, 0.2) 45%,
+      rgba(0, 0, 0, 0.55) 100%),
     url('../assets/images/farm-land.jpg');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  padding: 120px 20px 80px;
+  padding: 100px 20px 140px;
   box-sizing: border-box;
   text-align: center;
+}
+
+.farmlands-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: transparent;
 }
 
 .farmlands-hero-content {
   position: relative;
   z-index: 2;
+  width: 100%;
   max-width: 1000px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin: 0 auto;
+  /* Upper-middle placement (design match) */
+  transform: translateY(-12vh);
 }
 
 .farmlands-subtitle-top {
   font-family: var(--font-serif);
-  font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+  font-size: clamp(1.6rem, 3.2vw, 2.6rem);
   font-weight: 400;
   color: #FFFFFF;
   text-transform: uppercase;
-  letter-spacing: 3px;
-  margin: 0 0 0.2rem;
+  letter-spacing: 4px;
+  margin: 0 0 0.15rem;
   line-height: 1.1;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.45);
 }
 
 .farmlands-main-title {
   font-family: var(--font-serif);
-  font-size: clamp(3.8rem, 7vw, 6.2rem);
-  font-weight: 300;
+  font-size: clamp(3.4rem, 7vw, 6rem);
+  font-weight: 400;
   color: #d4a958;
   text-transform: uppercase;
   letter-spacing: 4px;
   line-height: 1;
-  margin: 0 0 1rem;
+  margin: 0 0 0.85rem;
+  text-shadow: 0 3px 22px rgba(0, 0, 0, 0.4);
 }
 
 .farmlands-tagline {
   font-family: var(--font-sans);
-  font-size: clamp(1rem, 2vw, 1.4rem);
-  font-weight: 400;
+  font-size: clamp(0.85rem, 1.5vw, 1.15rem);
+  font-weight: 500;
   color: #FFFFFF;
   text-transform: uppercase;
   letter-spacing: 3px;
-  margin: 0 0 2rem;
   opacity: 0.95;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
 }
 
 .farmlands-coming-soon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  width: auto;
+  margin-top: 0;
+}
+
+.farmlands-coming-text {
   font-family: var(--font-serif);
-  font-size: clamp(2rem, 3.5vw, 2.8rem);
-  font-weight: 400;
+  font-size: clamp(0.95rem, 1.9vw, 2rem);
+  font-weight: 500;
   color: #FFFFFF;
   text-transform: uppercase;
-  letter-spacing: 3px;
-  margin-top: 10px;
+  letter-spacing: 6px;
+  white-space: nowrap;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.45);
+}
+
+/* Bottom 150+ Acres info capsule — absolute so text can true-center */
+.farmlands-info-capsule {
+  position: absolute;
+  left: 50%;
+  bottom: 36px;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  width: min(560px, 92vw);
+  margin: 0;
+  padding: 18px 32px;
+  background: rgba(10, 12, 14, 0.55);
+  border: 1.5px solid #d4a958;
+  border-radius: 18px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.farmlands-acres {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  min-width: 90px;
+}
+
+.farmlands-acres-num {
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 4vw, 3.1rem);
+  font-weight: 500;
+  color: #d4a958;
+  line-height: 1;
+  letter-spacing: 1px;
+}
+
+.farmlands-acres-label {
+  font-family: var(--font-sans);
+  font-size: clamp(0.72rem, 1.1vw, 0.85rem);
+  font-weight: 600;
+  color: #FFFFFF;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+.farmlands-info-divider {
+  width: 1px;
+  align-self: stretch;
+  min-height: 64px;
+  background: rgba(212, 169, 88, 0.85);
+  flex-shrink: 0;
+}
+
+.farmlands-info-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.farmlands-info-lines p {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: clamp(0.78rem, 1.2vw, 0.95rem);
+  font-weight: 500;
+  color: #FFFFFF;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  line-height: 1.45;
+}
+
+@media (max-width: 700px) {
+  .farmlands-hero-section {
+    padding: 100px 16px 130px;
+  }
+
+  .farmlands-hero-content {
+    transform: translateY(-8vh);
+  }
+
+  .farmlands-coming-soon {
+    gap: 12px;
+  }
+
+  .farmlands-coming-line {
+    width: 56px;
+  }
+
+  .farmlands-info-capsule {
+    bottom: 24px;
+    width: min(100%, 92vw);
+    gap: 18px;
+    padding: 16px 20px;
+    border-radius: 16px;
+  }
+
+  .farmlands-acres {
+    min-width: 72px;
+  }
+
+  .farmlands-info-divider {
+    min-height: 56px;
+  }
+}
+
+@media (max-width: 420px) {
+  .farmlands-info-capsule {
+    gap: 14px;
+    padding: 14px 16px;
+  }
+
+  .farmlands-info-lines p {
+    letter-spacing: 1px;
+    font-size: 0.72rem;
+  }
 }
 
 /* ==========================================================================
@@ -5043,11 +5191,21 @@ img {
 /* ==========================================================================
    RESPONSIVE BREAKPOINTS FOR RESORT LIVING HERO (320px to 1200px)
    ========================================================================== */
-@media (max-width: 1200px) and (min-width: 769px) {
+
+/* Tablet: same as resort-experiences — flex wrap, last row auto-center */
+@media (max-width: 1100px) and (min-width: 701px) {
   .resort-features-capsule {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 28px 20px;
+    padding: 40px 28px;
+  }
+
+  .resort-feature-item {
+    flex: 0 0 calc((100% - 40px) / 3);
+    max-width: calc((100% - 40px) / 3);
   }
 }
 
@@ -5103,13 +5261,17 @@ img {
     justify-content: center;
     box-sizing: border-box;
   }
+}
 
+/* 320–700: same as resort-experiences — 2-col + 5th centered */
+@media (max-width: 700px) {
   .resort-features-capsule {
-    margin-top: 35px;
+    margin-top: 28px;
     padding: 22px 18px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px 14px;
+    justify-items: center;
     border-radius: 16px;
     border: 1px solid rgba(199, 163, 90, 0.7);
     background-color: rgba(10, 12, 14, 0.85);
@@ -5117,13 +5279,19 @@ img {
 
   .resort-feature-item {
     gap: 10px;
+    width: 100%;
+    max-width: 220px;
+    flex: none;
   }
 
-  .resort-feature-item:nth-child(5) {
-    grid-column: 1 / -1;
+  .resort-features-capsule .resort-feature-item:last-child {
+    grid-column: span 2;
+    justify-self: center;
+    max-width: 220px;
+    margin: 0 auto;
     justify-content: center;
-    padding-top: 6px;
-    border-top: 1px solid rgba(199, 163, 90, 0.2);
+    padding-top: 0;
+    border-top: none;
   }
 
   .resort-feature-icon-box {
@@ -5145,6 +5313,103 @@ img {
   }
 }
 
+/*
+  320–700: philosophy-section jaisa pattern
+  - image upar (resortlivingbanner.jpeg) clearly show
+  - text thora neeche, image bottom pe soft overlap
+*/
+@media (max-width: 700px) {
+  .resort-hero-section {
+    padding: 0 0 40px;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    background-color: #07080A;
+    overflow: hidden;
+  }
+
+  .resort-hero-bg {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: 100% !important;
+    height: clamp(270px, 92vw, 400px) !important;
+    background-image: url('../assets/images/resortlivingbanner.jpeg') !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    z-index: 1;
+    order: 1;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+
+  /* Soft bottom fade — title isi pe thora baithegi */
+  .resort-hero-bg::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 50%;
+    background: linear-gradient(
+      to bottom,
+      rgba(7, 8, 10, 0) 0%,
+      rgba(7, 8, 10, 0.25) 30%,
+      rgba(7, 8, 10, 0.8) 70%,
+      #07080A 100%
+    );
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  /* Full-bleed dark overlay kill on mobile */
+  .resort-hero-overlay {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    background: none !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+
+  .resort-hero-container {
+    position: relative;
+    z-index: 3;
+    order: 2;
+    width: 100%;
+    max-width: 100%;
+    margin: -88px auto 0;
+    padding: 0 5%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .resort-hero-content {
+    max-width: 100%;
+    padding-top: 0;
+    text-align: left;
+  }
+
+  .resort-hero-title {
+    font-size: clamp(2.2rem, 9vw, 3rem);
+    margin-bottom: 0.9rem;
+  }
+
+  .resort-hero-title .title-gold {
+    font-size: clamp(1.7rem, 7vw, 2.4rem);
+  }
+
+  .resort-features-capsule {
+    margin-top: 28px;
+  }
+}
+
 @media (max-width: 480px) {
   .resort-hero-btn-group {
     flex-direction: column;
@@ -5156,17 +5421,10 @@ img {
     width: 100%;
   }
 
+  /* Keep 2-col + 5th centered (same as resort-experiences) */
   .resort-features-capsule {
-    grid-template-columns: 1fr;
-    gap: 16px;
-    padding: 20px 16px;
-  }
-
-  .resort-feature-item:nth-child(5) {
-    grid-column: auto;
-    justify-content: flex-start;
-    padding-top: 0;
-    border-top: none;
+    padding: 18px 14px;
+    gap: 16px 12px;
   }
 }
 
@@ -5342,19 +5600,56 @@ img {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .about-highway-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 20px;
+    position: relative;
   }
 
-  .about-highway-card::after {
+  /* No single full-height line — each left card gets its own short divider */
+  .about-highway-grid::before {
     display: none !important;
+  }
+
+  .about-highway-card:nth-child(odd)::after {
+    display: block !important;
+    content: '';
+    position: absolute;
+    top: 8%;
+    right: -10px;
+    width: 1px;
+    height: 84%;
+    background-color: rgba(199, 163, 90, 0.45);
+  }
+
+  .about-highway-card-header {
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+
+  .about-highway-icon-box {
+    width: 36px;
+    height: 36px;
+  }
+
+  .about-highway-icon {
+    max-width: 36px;
+    max-height: 36px;
+  }
+
+  .about-highway-card-title {
+    font-size: clamp(0.62rem, 2.6vw, 0.72rem);
+    letter-spacing: 0.6px;
+    line-height: 1.25;
   }
 
   .about-highway-card-desc {
     padding-left: 0;
-    margin-top: 6px;
+    margin-top: 2px;
+    font-size: clamp(0.65rem, 2.7vw, 0.75rem);
+    line-height: 1.45;
   }
 }
 
@@ -5651,9 +5946,16 @@ img {
 
   .resort-experiences-right {
     width: 100%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
     gap: 30px 20px;
+  }
+
+  .resort-amenity-col {
+    flex: 0 0 calc((100% - 40px) / 3);
+    max-width: calc((100% - 40px) / 3);
   }
 
   .resort-gallery-grid {
@@ -5676,19 +5978,38 @@ img {
   }
 }
 
-@media (max-width: 640px) {
+/* Resort amenities: 2-col + 5th centered (320–700), same as pillars/highlights */
+@media (max-width: 700px) {
   .resort-experiences-right {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 25px 15px;
+    justify-items: center;
   }
 
+  .resort-amenity-col {
+    width: 100%;
+    max-width: 180px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .resort-experiences-right .resort-amenity-col:last-child {
+    grid-column: span 2;
+    justify-self: center;
+    max-width: 180px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 640px) {
+  /* Mobile: keep 2x2 gallery images */
   .resort-gallery-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .resort-gallery-card {
-    height: 320px;
+    height: 220px;
   }
 
   .resort-register-form {
@@ -7315,6 +7636,179 @@ img {
   }
 }
 
+/*
+  experiences.php — 320–700:
+  philosophy-section jaisa pattern
+  image upar, text thora neeche (soft overlap)
+*/
+@media (max-width: 700px) {
+  .experiences-hero-section,
+  .wellness-section,
+  .family-section,
+  .adventure-section,
+  .waterfront-section,
+  .business-section,
+  .evenings-section,
+  .healthcare-section {
+    padding: 0 0 40px;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    background-color: #07080A;
+    overflow: hidden;
+  }
+
+  .experiences-hero-bg,
+  .wellness-bg,
+  .family-bg,
+  .adventure-bg,
+  .waterfront-bg,
+  .business-bg,
+  .evenings-bg,
+  .healthcare-bg {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: 100% !important;
+    height: clamp(270px, 92vw, 400px) !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    z-index: 1;
+    order: 1;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+
+  .experiences-hero-bg::after,
+  .wellness-bg::after,
+  .family-bg::after,
+  .adventure-bg::after,
+  .waterfront-bg::after,
+  .business-bg::after,
+  .evenings-bg::after,
+  .healthcare-bg::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 50%;
+    background: linear-gradient(
+      to bottom,
+      rgba(7, 8, 10, 0) 0%,
+      rgba(7, 8, 10, 0.25) 30%,
+      rgba(7, 8, 10, 0.8) 70%,
+      #07080A 100%
+    );
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .experiences-hero-overlay,
+  .wellness-overlay,
+  .family-overlay,
+  .adventure-overlay,
+  .waterfront-overlay,
+  .business-overlay,
+  .evenings-overlay,
+  .healthcare-overlay {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+
+  .experiences-hero-container,
+  .wellness-container,
+  .family-container,
+  .adventure-container,
+  .waterfront-container,
+  .business-container,
+  .evenings-container,
+  .healthcare-container {
+    position: relative;
+    z-index: 3;
+    order: 2;
+    width: 100%;
+    max-width: 100%;
+    min-height: auto;
+    margin: -88px auto 0;
+    padding: 0 5%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .experiences-hero-content,
+  .wellness-content,
+  .family-content,
+  .adventure-content,
+  .waterfront-content,
+  .business-content,
+  .evenings-content,
+  .healthcare-content {
+    padding-top: 0;
+    text-align: left;
+  }
+
+  .experiences-hero-title,
+  .wellness-title,
+  .family-title,
+  .adventure-title,
+  .waterfront-title,
+  .business-title,
+  .evenings-title,
+  .healthcare-title {
+    font-size: clamp(2.4rem, 11vw, 3.2rem);
+    letter-spacing: 2px;
+    line-height: 1.05;
+    margin-bottom: 0.85rem;
+  }
+
+  .experiences-hero-subtitle,
+  .wellness-subtitle,
+  .family-subtitle,
+  .adventure-subtitle,
+  .waterfront-subtitle,
+  .business-subtitle,
+  .evenings-subtitle,
+  .healthcare-subtitle {
+    font-size: clamp(0.95rem, 3.8vw, 1.2rem);
+    letter-spacing: 1.5px;
+    margin-bottom: 0.85rem;
+  }
+
+  .experiences-hero-desc,
+  .wellness-desc,
+  .family-desc,
+  .adventure-desc,
+  .waterfront-desc,
+  .business-desc,
+  .evenings-desc,
+  .healthcare-desc {
+    font-size: clamp(0.88rem, 3.6vw, 1rem);
+    line-height: 1.65;
+    max-width: 100%;
+  }
+
+  .experiences-bottom-area,
+  .wellness-bottom-area,
+  .family-bottom-area,
+  .adventure-bottom-area,
+  .waterfront-bottom-area,
+  .business-bottom-area,
+  .evenings-bottom-area,
+  .healthcare-bottom-area {
+    margin-top: 28px;
+  }
+}
+
 /* ==========================================================================
    OPPORTUNITIES HERO SECTION
    ========================================================================== */
@@ -7726,10 +8220,46 @@ img {
   }
 }
 
-@media (max-width: 580px) {
+/* Mobile: keep 2x2 columns (not single stack) */
+@media (max-width: 700px) {
   .positioned-columns-row {
-    grid-template-columns: 1fr;
-    gap: 25px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px 16px;
+    max-width: 100%;
+  }
+
+  .positioned-col {
+    padding: 0 8px;
+  }
+
+  /* Separate mid-line per row (left cards only) */
+  .positioned-col:nth-child(odd)::after {
+    display: block !important;
+    content: '';
+    position: absolute;
+    top: 8%;
+    right: -8px;
+    width: 1.5px;
+    height: 84%;
+    background-color: #d4a958;
+  }
+
+  .positioned-col:nth-child(even)::after {
+    display: none !important;
+  }
+
+  .positioned-col-title {
+    font-size: clamp(0.72rem, 3.2vw, 0.88rem);
+    letter-spacing: 1px;
+  }
+
+  .positioned-col-subtext {
+    font-size: clamp(0.65rem, 2.8vw, 0.75rem);
+  }
+
+  .positioned-col-subtext br {
+    display: none;
   }
 }
 
@@ -7941,10 +8471,46 @@ img {
   }
 }
 
-@media (max-width: 580px) {
+/* Mobile: keep 2-col grid (6 items = 3 rows) */
+@media (max-width: 700px) {
   .whatcreates-columns-row {
-    grid-template-columns: 1fr;
-    gap: 25px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px 16px;
+    max-width: 100%;
+  }
+
+  .whatcreates-col {
+    padding: 0 8px;
+  }
+
+  /* Separate mid-line per row (left cards only) */
+  .whatcreates-col:nth-child(odd)::after {
+    display: block !important;
+    content: '';
+    position: absolute;
+    top: 8%;
+    right: -8px;
+    width: 1.5px;
+    height: 84%;
+    background-color: #d4a958;
+  }
+
+  .whatcreates-col:nth-child(even)::after {
+    display: none !important;
+  }
+
+  .whatcreates-col-title {
+    font-size: clamp(0.72rem, 3.2vw, 0.88rem);
+    letter-spacing: 1px;
+  }
+
+  .whatcreates-col-subtext {
+    font-size: clamp(0.65rem, 2.8vw, 0.75rem);
+  }
+
+  .whatcreates-col-subtext br {
+    display: none;
   }
 }
 
@@ -8225,10 +8791,191 @@ img {
   }
 }
 
-@media (max-width: 580px) {
+/* Mobile: 2-col + 5th centered (same pattern as other sections) */
+@media (max-width: 700px) {
   .investgrow-columns-row {
-    grid-template-columns: 1fr;
-    gap: 25px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px 16px;
+    max-width: 100%;
+    justify-items: center;
+  }
+
+  .investgrow-col {
+    padding: 0 8px;
+    width: 100%;
+    max-width: 220px;
+  }
+
+  /* Separate mid-line per full row (left cards only) */
+  .investgrow-col:nth-child(1)::after,
+  .investgrow-col:nth-child(3)::after {
+    display: block !important;
+    content: '';
+    position: absolute;
+    top: 8%;
+    right: -8px;
+    width: 1.5px;
+    height: 84%;
+    background-color: #d4a958;
+  }
+
+  .investgrow-col:nth-child(2)::after,
+  .investgrow-col:nth-child(4)::after,
+  .investgrow-col:nth-child(5)::after {
+    display: none !important;
+  }
+
+  .investgrow-columns-row .investgrow-col:last-child {
+    grid-column: span 2;
+    justify-self: center;
+    max-width: 220px;
+    margin: 0 auto;
+  }
+
+  .investgrow-col-title {
+    font-size: clamp(0.72rem, 3.2vw, 0.88rem);
+    letter-spacing: 1px;
+  }
+
+  .investgrow-col-subtext {
+    font-size: clamp(0.65rem, 2.8vw, 0.75rem);
+  }
+
+  .investgrow-col-subtext br {
+    display: none;
+  }
+}
+
+/*
+  opportunities.php — 320–700:
+  philosophy-section jaisa pattern
+  image upar, text thora neeche (soft overlap)
+*/
+@media (max-width: 700px) {
+  .opportunities-hero-section,
+  .positioned-section,
+  .whatcreates-section,
+  .investgrow-section {
+    padding: 0 0 40px;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    background-color: #07080A;
+    overflow: hidden;
+  }
+
+  .opportunities-hero-bg,
+  .positioned-bg,
+  .whatcreates-bg,
+  .investgrow-bg {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: 100% !important;
+    height: clamp(270px, 92vw, 400px) !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    z-index: 1;
+    order: 1;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+
+  .opportunities-hero-bg::after,
+  .positioned-bg::after,
+  .whatcreates-bg::after,
+  .investgrow-bg::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 50%;
+    background: linear-gradient(
+      to bottom,
+      rgba(7, 8, 10, 0) 0%,
+      rgba(7, 8, 10, 0.25) 30%,
+      rgba(7, 8, 10, 0.8) 70%,
+      #07080A 100%
+    );
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .opportunities-hero-overlay,
+  .positioned-overlay,
+  .whatcreates-overlay,
+  .investgrow-overlay {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+
+  .opportunities-hero-container,
+  .positioned-container,
+  .whatcreates-container,
+  .investgrow-container {
+    position: relative;
+    z-index: 3;
+    order: 2;
+    width: 100%;
+    max-width: 100%;
+    min-height: auto;
+    margin: -88px auto 0;
+    padding: 0 5%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .opportunities-hero-content,
+  .positioned-content,
+  .whatcreates-content,
+  .investgrow-content {
+    padding-top: 0;
+    text-align: left;
+  }
+
+  .opportunities-hero-title,
+  .positioned-title,
+  .whatcreates-title,
+  .investgrow-title {
+    font-size: clamp(2.4rem, 11vw, 3.2rem);
+    letter-spacing: 2px;
+    line-height: 1.05;
+    margin-bottom: 0.85rem;
+  }
+
+  .opportunities-hero-subtitle,
+  .positioned-subtitle,
+  .whatcreates-subtitle {
+    font-size: clamp(0.95rem, 3.8vw, 1.2rem);
+    letter-spacing: 1.5px;
+    margin-bottom: 0.85rem;
+  }
+
+  .opportunities-hero-desc,
+  .positioned-desc,
+  .whatcreates-desc,
+  .investgrow-desc {
+    font-size: clamp(0.88rem, 3.6vw, 1rem);
+    line-height: 1.65;
+    max-width: 100%;
+  }
+
+  .opportunities-bottom-area,
+  .positioned-bottom-area,
+  .whatcreates-bottom-area,
+  .investgrow-bottom-area {
+    margin-top: 28px;
   }
 }
 
@@ -9565,6 +10312,86 @@ img {
   }
 }
 
+/* Highway City hero: philosophy-style stack + our.webp (320–700) */
+@media (max-width: 700px) {
+  .hc-hero-section {
+    padding: 0 0 40px;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    background-color: #07080A;
+    overflow: hidden;
+  }
+
+  .hc-hero-bg {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: 100% !important;
+    height: clamp(270px, 92vw, 400px) !important;
+    background-image: url('../assets/images/our.webp') !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    z-index: 1;
+    order: 1;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+
+  .hc-hero-bg::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 50%;
+    background: linear-gradient(
+      to bottom,
+      rgba(7, 8, 10, 0) 0%,
+      rgba(7, 8, 10, 0.25) 30%,
+      rgba(7, 8, 10, 0.8) 70%,
+      #07080A 100%
+    );
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .hc-hero-overlay {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+
+  .hc-hero-container {
+    position: relative;
+    z-index: 3;
+    order: 2;
+    width: 100%;
+    max-width: 100%;
+    margin: -88px auto 0;
+    padding: 0 5%;
+    box-sizing: border-box;
+  }
+
+  .hc-header-wrapper {
+    align-items: flex-start;
+    text-align: left;
+    width: 100%;
+  }
+
+  .hc-desc-text {
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
 @media (max-width: 540px) {
   .hc-highlights-grid {
     grid-template-columns: 1fr;
@@ -10805,6 +11632,159 @@ img {
 
   .hc-executive-tagline-text {
     letter-spacing: 2px;
+  }
+}
+
+/*
+  Highway City districts — 320–700:
+  philosophy-section jaisa pattern
+  image upar, text thora neeche (soft overlap)
+*/
+@media (max-width: 700px) {
+  .hc-downtown-section,
+  .hc-rainforest-section,
+  .hc-serene-section,
+  .hc-parkland-section,
+  .hc-santorini-section,
+  .hc-executive-section {
+    padding: 0 0 40px;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    background-color: #07080A;
+    overflow: hidden;
+  }
+
+  .hc-downtown-bg,
+  .hc-rainforest-bg,
+  .hc-serene-bg,
+  .hc-parkland-bg,
+  .hc-santorini-bg,
+  .hc-executive-bg {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: 100% !important;
+    height: clamp(270px, 92vw, 400px) !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    z-index: 1;
+    order: 1;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+
+  .hc-downtown-bg::after,
+  .hc-rainforest-bg::after,
+  .hc-serene-bg::after,
+  .hc-parkland-bg::after,
+  .hc-santorini-bg::after,
+  .hc-executive-bg::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 50%;
+    background: linear-gradient(
+      to bottom,
+      rgba(7, 8, 10, 0) 0%,
+      rgba(7, 8, 10, 0.25) 30%,
+      rgba(7, 8, 10, 0.8) 70%,
+      #07080A 100%
+    );
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .hc-downtown-overlay,
+  .hc-rainforest-overlay,
+  .hc-serene-overlay,
+  .hc-parkland-overlay,
+  .hc-santorini-overlay,
+  .hc-executive-overlay {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+
+  .hc-downtown-container,
+  .hc-rainforest-container,
+  .hc-serene-container,
+  .hc-parkland-container,
+  .hc-santorini-container,
+  .hc-executive-container {
+    position: relative;
+    z-index: 3;
+    order: 2;
+    width: 100%;
+    max-width: 100%;
+    min-height: auto;
+    margin: -88px auto 0;
+    padding: 0 5%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .hc-downtown-content,
+  .hc-rainforest-content,
+  .hc-serene-content,
+  .hc-parkland-content,
+  .hc-santorini-content,
+  .hc-executive-content {
+    padding-top: 0;
+    text-align: left;
+  }
+
+  .hc-downtown-title,
+  .hc-rainforest-title,
+  .hc-serene-title,
+  .hc-parkland-title,
+  .hc-santorini-title,
+  .hc-executive-title {
+    font-size: clamp(2.4rem, 11vw, 3.2rem);
+    letter-spacing: 2px;
+    line-height: 1.05;
+    margin-bottom: 0.85rem;
+  }
+
+  .hc-downtown-subtitle,
+  .hc-rainforest-subtitle,
+  .hc-serene-subtitle,
+  .hc-parkland-subtitle,
+  .hc-santorini-subtitle,
+  .hc-executive-subtitle {
+    font-size: clamp(0.95rem, 3.8vw, 1.2rem);
+    letter-spacing: 1.5px;
+    margin-bottom: 0.85rem;
+  }
+
+  .hc-downtown-desc,
+  .hc-rainforest-desc,
+  .hc-serene-desc,
+  .hc-parkland-desc,
+  .hc-santorini-desc,
+  .hc-executive-desc {
+    font-size: clamp(0.88rem, 3.6vw, 1rem);
+    line-height: 1.65;
+    max-width: 100%;
+  }
+
+  .hc-downtown-bottom-area,
+  .hc-rainforest-bottom-area,
+  .hc-serene-bottom-area,
+  .hc-parkland-bottom-area,
+  .hc-santorini-bottom-area,
+  .hc-executive-bottom-area {
+    margin-top: 28px;
   }
 }
 
