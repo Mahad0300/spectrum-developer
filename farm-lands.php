@@ -4,6 +4,7 @@
 
 <!-- Farm Lands Hero Section -->
 <section class="farmlands-hero-section">
+    <div class="farmlands-hero-bg"></div>
     <div class="farmlands-hero-overlay"></div>
 
     <div class="farmlands-hero-content">
@@ -11,7 +12,6 @@
         <h1 class="farmlands-main-title">FARM LANDS</h1>
         <p class="farmlands-tagline">GROWING VALUE FOR GENERATIONS.</p>
         <div class="farmlands-coming-soon">
-            <span class="farmlands-coming-line" aria-hidden="true"></span>
             <span class="farmlands-coming-text">COMING SOON</span>
         </div>
     </div>

@@ -3016,30 +3016,37 @@ img {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-image: linear-gradient(180deg,
-      rgba(0, 0, 0, 0.45) 0%,
-      rgba(0, 0, 0, 0.2) 45%,
-      rgba(0, 0, 0, 0.55) 100%),
-    url('../assets/images/farm-land.jpg');
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
+  background-color: #07080A;
   padding: 100px 20px 140px;
   box-sizing: border-box;
   text-align: center;
+  overflow: hidden;
+}
+
+.farmlands-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-image: url('../assets/images/farm-land.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 .farmlands-hero-overlay {
   position: absolute;
   inset: 0;
-  z-index: 1;
+  z-index: 2;
   pointer-events: none;
-  background: transparent;
+  background: linear-gradient(180deg,
+      rgba(0, 0, 0, 0.45) 0%,
+      rgba(0, 0, 0, 0.2) 45%,
+      rgba(0, 0, 0, 0.55) 100%);
 }
 
 .farmlands-hero-content {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   width: 100%;
   max-width: 1000px;
   display: flex;
@@ -3082,6 +3089,7 @@ img {
   color: #FFFFFF;
   text-transform: uppercase;
   letter-spacing: 3px;
+  margin: 0 0 1.5rem;
   opacity: 0.95;
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
 }
@@ -3113,7 +3121,7 @@ img {
   left: 50%;
   bottom: 36px;
   transform: translateX(-50%);
-  z-index: 2;
+  z-index: 3;
   display: flex;
   align-items: center;
   gap: 28px;
@@ -3183,13 +3191,79 @@ img {
   line-height: 1.45;
 }
 
+/*
+  Mobile 320–700: philosophy-section jaisa
+  - image upar clearly show
+  - text + capsule thora neeche, saath saath (no big gap)
+*/
 @media (max-width: 700px) {
   .farmlands-hero-section {
-    padding: 100px 16px 130px;
+    padding: 0 0 28px;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    background-color: #07080A;
+    overflow: hidden;
+  }
+
+  .farmlands-hero-bg {
+    position: relative !important;
+    inset: auto !important;
+    width: 100% !important;
+    height: clamp(270px, 92vw, 400px) !important;
+    background-image: url('../assets/images/farm-land.jpg') !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    z-index: 1;
+    order: 1;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+
+  .farmlands-hero-bg::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 50%;
+    background: linear-gradient(
+      to bottom,
+      rgba(7, 8, 10, 0) 0%,
+      rgba(7, 8, 10, 0.25) 30%,
+      rgba(7, 8, 10, 0.8) 70%,
+      #07080A 100%
+    );
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .farmlands-hero-overlay {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    width: 0 !important;
+    height: 0 !important;
   }
 
   .farmlands-hero-content {
-    transform: translateY(-8vh);
+    position: relative;
+    z-index: 3;
+    order: 2;
+    transform: none;
+    width: 100%;
+    max-width: 100%;
+    margin: -88px auto 14px;
+    padding: 0 5%;
+    box-sizing: border-box;
+    flex: 0 0 auto;
+  }
+
+  .farmlands-tagline {
+    margin-bottom: 1.1rem;
   }
 
   .farmlands-coming-soon {
@@ -3201,8 +3275,14 @@ img {
   }
 
   .farmlands-info-capsule {
-    bottom: 24px;
-    width: min(100%, 92vw);
+    position: relative;
+    left: auto;
+    bottom: auto;
+    transform: none;
+    order: 3;
+    z-index: 3;
+    width: min(100%, 90vw);
+    margin: 0 auto;
     gap: 18px;
     padding: 16px 20px;
     border-radius: 16px;
