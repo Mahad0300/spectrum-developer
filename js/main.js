@@ -1,0 +1,350 @@
+/**
+ * Spectrum Developers - JavaScript Interactions
+ * Header scroll state, dropdown toggles, and mobile drawer
+ */
+
+document.addEventListener('DOMContentLoaded', () => {
+  const header = document.querySelector('.site-header');
+  const dropdownItems = document.querySelectorAll('.has-dropdown');
+  const hamburgerToggle = document.querySelector('.hamburger-toggle');
+  const mobileDrawer = document.querySelector('.mobile-drawer');
+
+  // 1. ScrollSpy for Active Section Navigation Highlight
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-menu .nav-link');
+
+  if (sections.length > 0 && !window.location.pathname.includes('farm-lands.php')) {
+    window.addEventListener('scroll', () => {
+      let currentSection = '';
+      const scrollPosition = window.scrollY + 250;
+
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+          currentSection = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach((link) => {
+        link.classList.remove('active');
+        const href = link.getAttribute('href');
+        if (href && (href === `#${currentSection}` || href.includes(`#${currentSection}`))) {
+          link.classList.add('active');
+        }
+      });
+    });
+  }
+
+  // 2. Dropdown Interactivity
+  dropdownItems.forEach((item) => {
+    const link = item.querySelector('.nav-link');
+    
+    // Touch / Click toggle support for mobile & tablet
+    link.addEventListener('click', (e) => {
+      if (window.innerWidth <= 1024) {
+        e.preventDefault();
+        item.classList.toggle('dropdown-open');
+      }
+    });
+
+    item.addEventListener('mouseenter', () => {
+      item.classList.add('dropdown-active');
+    });
+
+    item.addEventListener('mouseleave', () => {
+      item.classList.remove('dropdown-active');
+    });
+  });
+
+  // 3. Mobile Hamburger & Left Drawer Logic
+  const drawerOverlay = document.getElementById('drawerOverlay');
+  const drawerCloseBtn = document.getElementById('drawerCloseBtn');
+  const mobileDestinationsToggle = document.getElementById('mobileDestinationsToggle');
+  const mobileDestinationsItem = document.getElementById('mobileDestinationsItem');
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav-link, .mobile-sub-link');
+
+  function openDrawer() {
+    if (mobileDrawer) mobileDrawer.classList.add('open');
+    if (drawerOverlay) drawerOverlay.classList.add('active');
+    document.body.classList.add('drawer-open');
+    if (hamburgerToggle) hamburgerToggle.setAttribute('aria-expanded', 'true');
+  }
+
+  function closeDrawer() {
+    if (mobileDrawer) mobileDrawer.classList.remove('open');
+    if (drawerOverlay) drawerOverlay.classList.remove('active');
+    document.body.classList.remove('drawer-open');
+    if (hamburgerToggle) hamburgerToggle.setAttribute('aria-expanded', 'false');
+  }
+
+  if (hamburgerToggle) {
+    hamburgerToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (mobileDrawer && mobileDrawer.classList.contains('open')) {
+        closeDrawer();
+      } else {
+        openDrawer();
+      }
+    });
+  }
+
+  if (drawerCloseBtn) {
+    drawerCloseBtn.addEventListener('click', closeDrawer);
+  }
+
+  if (drawerOverlay) {
+    drawerOverlay.addEventListener('click', closeDrawer);
+  }
+
+  // ESC Key Listener to close drawer
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mobileDrawer && mobileDrawer.classList.contains('open')) {
+      closeDrawer();
+    }
+  });
+
+  // Mobile Accordion Toggle for Destinations
+  if (mobileDestinationsToggle && mobileDestinationsItem) {
+    mobileDestinationsToggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      const isOpen = mobileDestinationsItem.classList.toggle('open');
+      mobileDestinationsToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  }
+
+  // Close drawer when clicking any mobile navigation link
+  mobileNavLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+      closeDrawer();
+    });
+  });
+
+  // 4. Masterplan Experience Destination Menu Interactive Card Content Switching
+  const masterplanData = {
+    'executive-square': {
+      title: 'EXECUTIVE SQUARE',
+      subtitle: 'CRAFTED FOR LEADERS. BUILT FOR SUCCESS',
+      desc: 'A district designed for professionals, entrepreneurs, and those who aspire to lead.',
+      image: 'assets/images/tabs-executive.png',
+      link: 'highway-city.php'
+    },
+    'santorini-shores': {
+      title: 'SANTORINI SHORES',
+      subtitle: 'Where the Journey Finds Its Peace',
+      desc: 'A waterfront destination inspired by resort living, leisure, and unforgettable experiences.',
+      image: 'assets/images/tabs-santorini.png',
+      link: 'highway-city.php'
+    },
+    'rainforest-enclave': {
+      title: 'RAINFOREST ENCLAVE',
+      subtitle: 'A Sanctuary Shaped by Nature',
+      desc: 'A tranquil environment where lush landscapes and natural beauty create a refreshing sense of escape.',
+      image: 'assets/images/tabs-rainforest.png',
+      link: 'highway-city.php'
+    },
+    'downtown': {
+      title: 'DOWNTOWN',
+      subtitle: 'The Pulse of Everyday Life',
+      desc: 'The urban heart of the enclave, bringing together commerce, dining, business, and community activity.',
+      image: 'assets/images/tabs-downtown.png',
+      link: 'highway-city.php'
+    },
+    'parkland-estates': {
+      title: 'PARKLAND ESTATES',
+      subtitle: 'Where Innovation Meets Nature',
+      desc: 'Lakefront living overlooking a vibrant park, future IT hub, and one of the most distinctive landscapes within the community.',
+      image: 'assets/images/tabs-parkland.png',
+      link: 'highway-city.php'
+    },
+    'serene-heaven': {
+      title: 'SERENE HEAVEN',
+      subtitle: 'Where the Journey Finds Its Peace',
+      desc: 'A scenic retreat of open skies and peaceful surroundings, enhanced by the captivating glow of the windmill skyline after sunset.',
+      image: 'assets/images/tabs-serene.png',
+      link: 'highway-city.php'
+    }
+  };
+
+  // Preload all district images immediately for zero-lag switching
+  Object.values(masterplanData).forEach(item => {
+    const img = new Image();
+    img.src = item.image;
+  });
+
+  const menuItems = document.querySelectorAll('.destination-menu .menu-item');
+  const card = document.getElementById('masterplanCard');
+  const cardImg = document.getElementById('mpCardImage');
+  const cardTitle = document.getElementById('mpCardTitle');
+  const cardSubtitle = document.getElementById('mpCardSubtitle');
+  const cardDesc = document.getElementById('mpCardDesc');
+  const cardBtn = document.getElementById('mpCardBtn');
+
+  menuItems.forEach((item) => {
+    item.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (item.classList.contains('active')) return;
+
+      const districtKey = item.getAttribute('data-district');
+      const data = masterplanData[districtKey];
+      if (!data) return;
+
+      // 1. Instant Menu Active State Update
+      menuItems.forEach((i) => {
+        i.classList.remove('active');
+        const arrow = i.querySelector('.menu-arrow');
+        if (arrow) arrow.remove();
+      });
+
+      item.classList.add('active');
+      const link = item.querySelector('.menu-link');
+      if (link && !link.querySelector('.menu-arrow')) {
+        const arrow = document.createElement('i');
+        arrow.className = 'fa-solid fa-arrow-right menu-arrow';
+        link.appendChild(arrow);
+      }
+
+      // 2. Smooth 180ms cross-fade card transition
+      if (card) {
+        card.classList.add('card-fading');
+
+        setTimeout(() => {
+          if (cardImg) {
+            cardImg.src = data.image;
+            cardImg.alt = data.title;
+          }
+          if (cardTitle) cardTitle.textContent = data.title;
+          if (cardSubtitle) cardSubtitle.textContent = data.subtitle;
+          if (cardDesc) cardDesc.textContent = data.desc;
+          if (cardBtn) cardBtn.href = data.link;
+
+          card.classList.remove('card-fading');
+        }, 180);
+      }
+    });
+  });
+
+  // 5. Experiences Section Swiper.js Carousel Initialization
+  if (typeof Swiper !== 'undefined' && document.querySelector('.experiences-swiper')) {
+    const experiencesSwiper = new Swiper('.experiences-swiper', {
+      loop: true,
+      loopAdditionalSlides: 4,
+      centeredSlides: false,
+      slidesPerView: 'auto',
+      spaceBetween: 32,
+      speed: 900,
+      grabCursor: true,
+      autoplay: {
+        delay: 3500,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+      pagination: {
+        el: '.experiences-swiper .swiper-pagination',
+        clickable: true,
+      },
+      breakpoints: {
+        320: {
+          spaceBetween: 16,
+        },
+        768: {
+          spaceBetween: 24,
+        },
+        1024: {
+          spaceBetween: 32,
+        },
+      },
+    });
+  }
+
+  // 6. Header Auth Hamburger Dropdown Toggle (Login / Signup)
+  const authBtn = document.getElementById('authHamburgerBtn');
+  const authDropdown = document.getElementById('authDropdownMenu');
+
+  if (authBtn && authDropdown) {
+    authBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      authDropdown.classList.toggle('show');
+      authBtn.classList.toggle('active');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!authDropdown.contains(e.target) && !authBtn.contains(e.target)) {
+        authDropdown.classList.remove('show');
+        authBtn.classList.remove('active');
+      }
+    });
+  }
+
+  // 7. Consultation Form AJAX Submission with SMTP
+  const consultationForm = document.getElementById('consultationForm');
+  const formAlert = document.getElementById('formAlert');
+  const btnSubmit = document.getElementById('btnSubmitConsultation');
+
+  if (consultationForm) {
+    consultationForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      if (btnSubmit) {
+        btnSubmit.disabled = true;
+        btnSubmit.innerHTML = `
+          <i class="fa-solid fa-spinner fa-spin"></i>
+          <span>SENDING REQUEST...</span>
+        `;
+      }
+
+      if (formAlert) {
+        formAlert.style.display = 'none';
+        formAlert.className = 'form-alert-box';
+        formAlert.innerHTML = '';
+      }
+
+      const formData = new FormData(consultationForm);
+
+      try {
+        const response = await fetch('process-contact.php', {
+          method: 'POST',
+          body: formData
+        });
+
+        const data = await response.json();
+
+        if (formAlert) {
+          formAlert.style.display = 'flex';
+          if (data.status === 'success') {
+            formAlert.className = 'form-alert-box form-alert-success';
+            formAlert.innerHTML = `
+              <i class="fa-solid fa-circle-check" style="font-size: 1.3rem; color: #C5A059; flex-shrink: 0;"></i>
+              <div>${data.message}</div>
+            `;
+            consultationForm.reset();
+          } else {
+            formAlert.className = 'form-alert-box form-alert-error';
+            formAlert.innerHTML = `
+              <i class="fa-solid fa-circle-exclamation" style="font-size: 1.3rem; color: #ff8585; flex-shrink: 0;"></i>
+              <div>${data.message || 'An error occurred while submitting the form.'}</div>
+            `;
+          }
+          formAlert.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      } catch (err) {
+        if (formAlert) {
+          formAlert.style.display = 'flex';
+          formAlert.className = 'form-alert-box form-alert-error';
+          formAlert.innerHTML = `
+            <i class="fa-solid fa-triangle-exclamation" style="font-size: 1.3rem; color: #ff8585; flex-shrink: 0;"></i>
+            <div>Network error. Please check your connection or call us at +92 311 1123115.</div>
+          `;
+        }
+      } finally {
+        if (btnSubmit) {
+          btnSubmit.disabled = false;
+          btnSubmit.innerHTML = `
+            <span>ARRANGE CONSULTATION</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          `;
+        }
+      }
+    });
+  }
+});
