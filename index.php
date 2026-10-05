@@ -646,7 +646,19 @@ are at the heart of this transformation.</p>
 
             <form class="luxury-consultation-form" id="consultationForm" action="process-contact.php" method="POST">
                 <!-- Status Alert Box -->
-                <div id="formAlert" class="form-alert-box" style="display: none;"></div>
+                <?php
+                  $formStatus = $_GET['form_status'] ?? '';
+                  $formMsg = $_GET['msg'] ?? '';
+                ?>
+                <div id="formAlert" class="form-alert-box <?php echo ($formStatus === 'success') ? 'form-alert-success' : (($formStatus === 'error') ? 'form-alert-error' : ''); ?>" style="<?php echo !empty($formStatus) ? 'display: flex;' : 'display: none;'; ?>">
+                    <?php if ($formStatus === 'success'): ?>
+                        <i class="fa-solid fa-circle-check" style="font-size: 1.3rem; color: #C5A059; flex-shrink: 0;"></i>
+                        <div><?php echo htmlspecialchars($formMsg, ENT_QUOTES, 'UTF-8'); ?></div>
+                    <?php elseif ($formStatus === 'error'): ?>
+                        <i class="fa-solid fa-circle-exclamation" style="font-size: 1.3rem; color: #ff8585; flex-shrink: 0;"></i>
+                        <div><?php echo htmlspecialchars($formMsg, ENT_QUOTES, 'UTF-8'); ?></div>
+                    <?php endif; ?>
+                </div>
                 
                 <div class="form-row gap-row">
                     <div class="form-group">

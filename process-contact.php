@@ -3,16 +3,45 @@
  * Spectrum Developers - Contact Form Backend & SMTP Email Processor
  */
 
-// Set JSON response header
-header('Content-Type: application/json; charset=UTF-8');
+// Determine if this is an AJAX request
+$isAjax = (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest')
+          || (isset($_SERVER['HTTP_ACCEPT']) && strpos($_SERVER['HTTP_ACCEPT'], 'application/json') !== false)
+          || !empty($_POST['is_ajax']);
+
+$referer = $_SERVER['HTTP_REFERER'] ?? 'contact.php';
+
+// Response Dispatcher Function
+function send_response($status, $message, $debug = '', $isAjax = true, $referer = 'contact.php') {
+    if ($isAjax) {
+        header('Content-Type: application/json; charset=UTF-8');
+        echo json_encode([
+            'status'  => $status,
+            'message' => $message,
+            'debug'   => $debug
+        ]);
+        exit();
+    } else {
+        $cleanReferer = strtok($referer, '?');
+        if (empty($cleanReferer) || strpos($cleanReferer, 'process-contact.php') !== false) {
+            $cleanReferer = 'contact.php';
+        }
+        $query = http_build_query([
+            'form_status' => $status,
+            'msg'         => $message
+        ]);
+        header("Location: {$cleanReferer}?{$query}#contact");
+        exit();
+    }
+}
 
 // Allow only POST requests
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    echo json_encode([
-        'status'  => 'error',
-        'message' => 'Invalid request method. Only POST is allowed.'
-    ]);
-    exit();
+    if ($isAjax) {
+        send_response('error', 'Invalid request method. Only POST is allowed.', '', true);
+    } else {
+        header("Location: index.php");
+        exit();
+    }
 }
 
 define('SPECTRUM_ACCESS', true);
@@ -37,18 +66,15 @@ $assistMessage = sanitize_input($_POST['assistMessage'] ?? '');
 
 // 2. Validate Required Fields
 if (empty($fullName)) {
-    echo json_encode(['status' => 'error', 'message' => 'Please enter your Full Name.']);
-    exit();
+    send_response('error', 'Please enter your Full Name.', '', $isAjax, $referer);
 }
 
 if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    echo json_encode(['status' => 'error', 'message' => 'Please provide a valid Email Address.']);
-    exit();
+    send_response('error', 'Please provide a valid Email Address.', '', $isAjax, $referer);
 }
 
 if (empty($phone)) {
-    echo json_encode(['status' => 'error', 'message' => 'Please enter your Phone Number.']);
-    exit();
+    send_response('error', 'Please enter your Phone Number.', '', $isAjax, $referer);
 }
 
 // Format Preferred Date & Time nicely if provided
@@ -201,14 +227,19 @@ $result = $mailer->send(
 );
 
 if ($result['success']) {
-    echo json_encode([
-        'status'  => 'success',
-        'message' => 'Thank you! Your consultation request has been successfully submitted. Our dedicated team will connect with you at your preferred time.'
-    ]);
+    send_response(
+        'success',
+        'Thank you! Your consultation request has been successfully submitted. Our dedicated team will connect with you at your preferred time.',
+        '',
+        $isAjax,
+        $referer
+    );
 } else {
-    echo json_encode([
-        'status'  => 'error',
-        'message' => 'Could not send your request at this moment. Please call us directly at +92 311 1123115.',
-        'debug'   => $result['message'] ?? 'SMTP Error'
-    ]);
+    send_response(
+        'error',
+        'Could not send your request at this moment. Please call us directly at +92 311 1123115.',
+        $result['message'] ?? 'SMTP Error',
+        $isAjax,
+        $referer
+    );
 }

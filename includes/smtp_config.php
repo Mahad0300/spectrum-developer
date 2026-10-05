@@ -11,13 +11,13 @@ if (!defined('SPECTRUM_ACCESS') && basename($_SERVER['PHP_SELF']) == basename(__
 }
 
 return [
-    // SMTP Server Settings (Gmail SMTP)
-    'smtp_host'       => 'smtp.gmail.com',
+    // SMTP Server Settings (Hostinger Webmail SMTP)
+    'smtp_host'       => 'smtp.hostinger.com',
     'smtp_port'       => 465,                     // 465 for SSL, 587 for TLS
     'smtp_secure'     => 'ssl',                   // 'ssl' or 'tls'
     'smtp_auth'       => true,
     'smtp_user'       => 'syedmahadbukhari8@gmail.com',
-    'smtp_pass'       => '*********',       // Gmail App Password (without spaces)
+    'smtp_pass'       => '******',       // Gmail App Password (without spaces)
     'smtp_timeout'    => 20,
 
     // Sender Details (Branded as Spectrum Developers)
